@@ -3,7 +3,6 @@ package br.com.indepdevbr.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,14 +24,13 @@ public class CadastroController {
 	private TransportadoraServiceImp transportadoraServiceImp;
 	
 	@PostMapping("/motorista")
-	public ResponseEntity<?> cadastrarMotorista(@Valid @RequestBody Motorista motorista) {
-		motoristaServiceImp.inserir(motorista);
-		return ResponseEntity.ok().build();
+	public Motorista cadastrarMotorista(@Valid @RequestBody Motorista motorista) {		
+		return motoristaServiceImp.inserir(motorista);
 	}
 	
 	@PostMapping("/transportadora_operador")
-	public ResponseEntity<?> cadastrarTransportadoraOperador(@Valid @RequestBody TransportadoraOperador transportadoraOperador) {
-		transportadoraServiceImp.cadastrarTransportadoraOperador(transportadoraOperador);
-		return ResponseEntity.ok().build();
+	public TransportadoraOperador cadastrarTransportadoraOperador(
+			@Valid @RequestBody TransportadoraOperador transportadoraOperador) {		
+		return transportadoraServiceImp.cadastrarTransportadoraOperador(transportadoraOperador);
 	}
 }
