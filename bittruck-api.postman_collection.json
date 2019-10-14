@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1ed8a74b-3ea2-4baa-9f26-4934c7795715",
+		"_postman_id": "fe52a778-391c-43bf-868d-5889ecbe895c",
 		"name": "bittruck-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -13,6 +13,21 @@
 					"item": [
 						{
 							"name": "cadastro - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0263738c-3fa8-4176-a3a3-a9bf51c2b466",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -33,12 +48,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://bittruck-api.herokuapp.com/api/cadastro/motorista",
-									"protocol": "https",
+									"raw": "{{host}}/api/cadastro/motorista",
 									"host": [
-										"bittruck-api",
-										"herokuapp",
-										"com"
+										"{{host}}"
 									],
 									"path": [
 										"api",
@@ -51,6 +63,21 @@
 						},
 						{
 							"name": "cadastro - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ac6c8f5a-eba3-43df-9db0-3f6af1ff3abe",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -71,12 +98,510 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/cadastro/motorista",
-									"protocol": "http",
+									"raw": "{{host}}/api/cadastro/motorista",
 									"host": [
-										"localhost"
+										"{{host}}"
 									],
-									"port": "8080",
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e5cbc762-47a2-485d-b068-0c9eac8718fd",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"JOÃO ROBERTO CASAGRANDE\",\n\t\"desEmail\":\"joao_grande@email.com.br\",\n\t\"datNascimento\":\"22/01/1996\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"44849753787\",\n\t\"codCnh\":\"145837122\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"joao_grande@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb9bd4b7-85c4-40fd-a029-1d9f3cc3605b",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"FÁBIO SANTOS ALMEIDA\",\n\t\"desEmail\":\"f_almeida@email.com.br\",\n\t\"datNascimento\":\"24/06/1974\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"09323713708\",\n\t\"codCnh\":\"1240209726\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"f_almeida@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ef0ca79a-fa2f-4141-93aa-beb2a4d63fa4",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"JORGE BRASIL SANTOS\",\n\t\"desEmail\":\"jorgebrasil@email.com.br\",\n\t\"datNascimento\":\"01/05/1996\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"37151754787\",\n\t\"codCnh\":\"195215523\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"jorgebrasil@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8a7233a8-0029-4bff-bd02-2f47f054e5a1",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"JORGE CORREA BRANDÃO\",\n\t\"desEmail\":\"jorgecorrea@email.com.br\",\n\t\"datNascimento\":\"26/06/1957\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"55222269787\",\n\t\"codCnh\":\"87441479\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"jorgecorrea@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 7",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ae233ea3-51ae-4f6b-a36b-8e477593a780",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"JOSÉ AILTON DA SILVA\",\n\t\"desEmail\":\"jos_silva@email.com.br\",\n\t\"datNascimento\":\"06/08/1993\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"82547971453\",\n\t\"codCnh\":\"328723035\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"jos_silva@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "54be69e1-516b-4489-aab7-f45ea5a58831",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"JOSÉ ZANELATO FILHO\",\n\t\"desEmail\":\"jose_filho@email.com.br\",\n\t\"datNascimento\":\"31/12/1985\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"31423914791\",\n\t\"codCnh\":\"43394867\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"jose_filho@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 9",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "53046f44-f2f6-466d-80b7-9bf48eeb2536",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"MARCELO OLIVEIRA DA SILVA\",\n\t\"desEmail\":\"marcelooliveira@email.com.br\",\n\t\"datNascimento\":\"20/01/1964\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"02830802721\",\n\t\"codCnh\":\"36407903\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"marcelooliveira@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a2c3a775-e58c-49ff-94d3-107f03fd2d21",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"NICANOR LOURENÇO DA SILVA\",\n\t\"desEmail\":\"nicanor@email.com.br\",\n\t\"datNascimento\":\"01/08/1998\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"96866829704\",\n\t\"codCnh\":\"139933772\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"nicanor@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 11",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3ea05912-0164-48d1-ac79-629953ac5cc7",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"OCTÁVIO PEREIRA DE MIRANDA\",\n\t\"desEmail\":\"oct_miranda@email.com.br\",\n\t\"datNascimento\":\"31/11/1960\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"31415784787\",\n\t\"codCnh\":\"830336307\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"oct_miranda@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 12",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fad00ae7-8eb6-4755-9b63-a9ef8c0eec31",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"VITOR DE OLIVEIRA BRANDÃO\",\n\t\"desEmail\":\"vitor@email.com.br\",\n\t\"datNascimento\":\"16/04/1988\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"10824797728\",\n\t\"codCnh\":\"4579291486\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"vitor@email.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/motorista",
+									"host": [
+										"{{host}}"
+									],
 									"path": [
 										"api",
 										"cadastro",
@@ -95,6 +620,21 @@
 					"item": [
 						{
 							"name": "cadastro - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4301bad2-9d0f-4d7b-9990-0f1e0f0c7dc9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -115,12 +655,460 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/cadastro/transportadora_operador",
-									"protocol": "http",
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
 									"host": [
-										"localhost"
+										"{{host}}"
 									],
-									"port": "8080",
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "12fb4faf-3667-4c5f-9f35-275c24c7782f",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"GREEN LIGHT AGENCIAMENTOS DE CARGAS E TRANSPORTES LTDA\",\n\t\"codCnpj\":\"09423217000189\",\n\t\"desEmailContato\":\"contato@greenlight.com.br\",\n\t\"numTelefone\": \"1303023558\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"JORGE BRASIL SANTOS\",\n\t\t\"codCpf\":\"37151754787\",\n\t\t\"desEmail\":\"jorge@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"jorge@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"11013201\",\n\t\t\"desLogradouro\":\"Rua São Francisco\",\n\t\t\"numLogradouro\":\"65\",\n\t\t\"nomBairro\":\"CENTRO\",\n\t\t\"nomCidade\":\"Santos\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1b66a0ce-d81c-45cb-8de3-c9c5e30f5f76",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"TOME EQUIPAMENTO E TRANSPORTES S.A\",\n\t\"codCnpj\":\"44384832000809\",\n\t\"desEmailContato\":\"contato@tomeequipamentoetransportes.com.br\",\n\t\"numTelefone\": \"1332780000\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"JOSÉ AILTON DA SILVA\",\n\t\t\"codCpf\":\"82547971453\",\n\t\t\"desEmail\":\"jose@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"jose@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"11025240\",\n\t\t\"desLogradouro\":\"Rua Doutor Bernardo Browne\",\n\t\t\"numLogradouro\":\"198\",\n\t\t\"nomBairro\":\"Estuário\",\n\t\t\"nomCidade\":\"Santos\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1dd7c7ec-4ccc-486d-aef3-64efa8982ff9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"SUATRANS EMERGENCIA SA\",\n\t\"codCnpj\":\"11414555000104\",\n\t\"desEmailContato\":\"contato@suatransemergenciasa.com.br\",\n\t\"numTelefone\": \"1135263526\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"JOSÉ ZANELATO FILHO\",\n\t\t\"codCpf\":\"31423914791\",\n\t\t\"desEmail\":\"jose_zanelato@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"jose_zanelato@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"03110001\",\n\t\t\"desLogradouro\":\"Rua Borges de Figueiredos\",\n\t\t\"numLogradouro\":\"1271\",\n\t\t\"nomBairro\":\"Moóca\",\n\t\t\"nomCidade\":\"São Paulo\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "33b559eb-a6ad-476f-b053-da9a33801bf7",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"IMPER RIO RDL TRANSPORTE LTDA\",\n\t\"codCnpj\":\"00737612000242\",\n\t\"desEmailContato\":\"contato@imperriordltransporteltda.com.br\",\n\t\"numTelefone\": \"1129093097\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"OCTÁVIO PEREIRA DE MIRANDA\",\n\t\t\"codCpf\":\"31415784787\",\n\t\t\"desEmail\":\"octavio@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"octavio@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"02066120\",\n\t\t\"desLogradouro\":\"Avenida Pedra Sabão\",\n\t\t\"numLogradouro\":\"343\",\n\t\t\"nomBairro\":\"Vila Guilherme\",\n\t\t\"nomCidade\":\"São Paulo\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1b6ff0b0-46d3-41f9-9708-eb8dd9eaec27",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"TRANSPORTADORA AMERICANA LTDA\",\n\t\"codCnpj\":\"43244631000169\",\n\t\"desEmailContato\":\"contato@transportadoraamericana.com.br\",\n\t\"numTelefone\": \"2121089000\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"FLAVIA CRISTINA RIBEIRO DA FONSECA\",\n\t\t\"codCpf\":\"03436077780\",\n\t\t\"desEmail\":\"flavia@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"flavia@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"13475010\",\n\t\t\"desLogradouro\":\"Avebida Comendador Thomaz Fortunato\",\n\t\t\"numLogradouro\":\"3466\",\n\t\t\"nomBairro\":\"Chácara Letônia\",\n\t\t\"nomCidade\":\"Americana\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 7",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6e2b2478-b3f3-404e-b24e-5c4e28932f93",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"ZIRANLOG ARMAZENS GERAIS E TRANSPORTES LTDA\",\n\t\"codCnpj\":\"05294609000215\",\n\t\"desEmailContato\":\"contato@ziranlogarmazensgeraisetransportesltda.com.br\",\n\t\"numTelefone\": \"1124996369\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"ARIOSVALDO FELIX DO NASCIMENTO\",\n\t\t\"codCpf\":\"33715084715\",\n\t\t\"desEmail\":\"ariosvaldo@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"ariosvaldo@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"07242150\",\n\t\t\"desLogradouro\":\"Rua São José da Laje\",\n\t\t\"numLogradouro\":\"1561\",\n\t\t\"desCompletemento\":\"\",\n\t\t\"nomBairro\":\"Cidade Parque Alvorada\",\n\t\t\"nomCidade\":\"Guarulhos\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6433446d-f013-4c61-a6bb-60423f3735ab",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"RAPIDO TRANSPAULO LTDA\",\n\t\"codCnpj\":\"88317847003403\",\n\t\"desEmailContato\":\"contato@rapidotranspaulo.com.br\",\n\t\"numTelefone\": \"2138189200\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"PAULO TREU\",\n\t\t\"codCpf\":\"41243501715\",\n\t\t\"desEmail\":\"raimundo@email.com\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"paulo_treu@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"13175070\",\n\t\t\"desLogradouro\":\"Rua Joaquim Ignácio Valente\",\n\t\t\"numLogradouro\":\"291\",\n\t\t\"nomBairro\":\"Jardim Bela Vista\",\n\t\t\"nomCidade\":\"Sumare\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 9",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3071a845-2e37-40b1-b259-a0e977e3b2ef",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"T.M.& I. LTDA - MILLENIUM TRANSPORTES\",\n\t\"codCnpj\":\"02714307000180\",\n\t\"desEmailContato\":\"contato@tmitransportes.com.br\",\n\t\"numTelefone\": \"1136026844\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"ALBERTO ALDYR NERY MOREIRA\",\n\t\t\"codCpf\":\"98100637768\",\n\t\t\"desEmail\":\"alberto@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"alberto@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"06705030\",\n\t\t\"desLogradouro\":\"Rua Ladislao Reti\",\n\t\t\"numLogradouro\":\"829\",\n\t\t\"nomBairro\":\"Jardim do Rio Cotia\",\n\t\t\"nomCidade\":\"Cotia\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c5a3a2d0-cf21-42c8-a0d2-9d696dcbc63f",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"DEUGRO BRASIL TRANSPORTES NACIONAIS INTERNACIONAIS LOGISTICA LTDA\",\n\t\"codCnpj\":\"09303312000149\",\n\t\"desEmailContato\":\"contato@deugrobrasiltransportes.com.br\",\n\t\"numTelefone\": \"2135504060\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"JESSÉ DIAS PAIVA\",\n\t\t\"codCpf\":\"06223368860\",\n\t\t\"desEmail\":\"jesse@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"jesse@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"04531004\",\n\t\t\"desLogradouro\":\"Rua Pedroso Alvarenga\",\n\t\t\"numLogradouro\":\"1254\",\n\t\t\"desCompletemento\":\"SALA 111\",\n\t\t\"nomBairro\":\"ITAIM BIBI\",\n\t\t\"nomCidade\":\"São Paulo\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/transportadora_operador",
+									"host": [
+										"{{host}}"
+									],
 									"path": [
 										"api",
 										"cadastro",
@@ -145,6 +1133,22 @@
 					"item": [
 						{
 							"name": "logar - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "592f45ee-507c-4957-9ef5-9687b9a7e5bd",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"jwtMotorista\", jsonData.strTokenJWT);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -165,12 +1169,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://bittruck-api.herokuapp.com/api/autenticacao/login",
-									"protocol": "https",
+									"raw": "{{host}}/api/autenticacao/login",
 									"host": [
-										"bittruck-api",
-										"herokuapp",
-										"com"
+										"{{host}}"
 									],
 									"path": [
 										"api",
@@ -203,12 +1204,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/autenticacao/login",
-									"protocol": "http",
+									"raw": "{{host}}/api/autenticacao/login",
 									"host": [
-										"localhost"
+										"{{host}}"
 									],
-									"port": "8080",
 									"path": [
 										"api",
 										"autenticacao",
@@ -227,6 +1226,22 @@
 					"item": [
 						{
 							"name": "logar - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a6d6c7e9-2598-484e-8628-14a74b7e2888",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"jwtOperador\", jsonData.strTokenJWT);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -247,12 +1262,118 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/autenticacao/login",
-									"protocol": "http",
+									"raw": "{{host}}/api/autenticacao/login",
 									"host": [
-										"localhost"
+										"{{host}}"
 									],
-									"port": "8080",
+									"path": [
+										"api",
+										"autenticacao",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "logar - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d17ad5ae-35dd-4b47-9909-0328e803da81",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"jwtAdmin\", jsonData.strTokenJWT);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\"codLogin\":\"admin1\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/autenticacao/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"autenticacao",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logar - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fb2024bb-fe0d-45bf-a610-ba15dfd148e7",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\"codLogin\":\"admin2\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/autenticacao/login",
+									"host": [
+										"{{host}}"
+									],
 									"path": [
 										"api",
 										"autenticacao",
@@ -279,17 +1400,14 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "",
+								"value": "Bearer  {{jwtMotorista}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://bittruck-api.herokuapp.com/api/motorista/1",
-							"protocol": "https",
+							"raw": "{{host}}/api/motorista/1",
 							"host": [
-								"bittruck-api",
-								"herokuapp",
-								"com"
+								"{{host}}"
 							],
 							"path": [
 								"api",
@@ -299,6 +1417,2945 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "marca",
+			"item": [
+				{
+					"name": "inserir",
+					"item": [
+						{
+							"name": "inserir - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b38abd0e-55e4-40a2-980f-084fb4c92be2",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"VOLVO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5b630210-fbad-4f7d-9090-39c99c629107",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"SCANIA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3c8191fe-091a-42c5-b17b-681baffbbc01",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"RANDON\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3401c310-8cb2-446c-bbba-4c9067887651",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FORD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "08716c14-9394-4066-8508-951ece1984e1",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"M. BENZ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4c7b7e5d-46f8-4a46-b40e-e4a9b7bcbab8",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"LIDER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 7",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2721b5cc-e315-4b26-ab5e-881a8c42a84b",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"H225A\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "890daebd-ae76-4c65-98a2-ff710be686f8",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"IDEROL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir  - 9",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d57f9175-fd6c-4cc6-973f-33459f4c8066",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FNV FRUEHAUF\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b5503a9a-d685-4c32-9b4d-6531082af347",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"ANTONINI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 11",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "44966f8a-3a72-4fb8-9312-121bf5fc6e49",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"VOLKSWAGEN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 12",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "15e64071-db85-4c7e-8a05-1f138eaed15b",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"SCHIFFER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 13",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "29eee4d6-7103-4d95-b682-62e7f855333b",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"NOMA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 14",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94d00fbe-2d3f-4e10-a90a-c50a2689de40",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"GUERRA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 15",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "89c90bf7-e9ee-4845-a104-4f2a93345b92",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"KRONE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 16",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "42004e12-5785-49a8-813e-063107615def",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"SINOTRUCK HOWO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 17",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "87eec33d-1c59-4b2d-ad5f-0a6cf1e047ea",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"RODOLINEA SRFURG\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 18",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "39708e0a-3ee7-419d-a6c3-08f063d124ee",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"REB / RODOVIARIA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 19",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9e8a497b-c50a-425d-8c50-6192157c0f2c",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FACCHINI SRF\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 20",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "25f01f08-45ad-4476-ab2e-31471cb7c351",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FNM/210\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 21",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e513b0c6-b003-4513-a6f8-3a03453b29b2",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"ROSSETTI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 22",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "48e11a90-2bff-4e0e-bc22-339dd2cadda1",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"REB/LIDER SRCS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 23",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e4eb751f-87b5-4ded-b9a5-b91b456da9ab",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"CAR/S.REBOQUE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 24",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b3d5991-07ad-43e3-b492-58e3059220ad",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"REACH STACKER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 25",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "44067c7d-0d2d-42ef-be64-4b639682736e",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"MILAN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 26",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a41f41e-c741-49cb-b4a4-05acfd580aba",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"CHEVROLET\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 27",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "68517319-10e0-419d-a080-b218f190b8d2",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FIAT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 28",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e9267d17-3001-4ddb-b200-3b2935e67696",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"HYSTER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 29",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3b0adc5d-8410-4abf-86b1-c24ca0e1f08f",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"CASE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 30",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "682e7a36-ab74-437e-b342-d1a5b7a22dc7",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"MANUTENÇÃO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 31",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "16d945e9-8789-42ce-ace6-61a173845aef",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"PPM TEREX\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 32",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9cd962d8-af9f-4297-9031-35b9b714f955",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"FERRARI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 33",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5f8fcec3-8a2e-49c8-8dda-68feac1da3f5",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"HYUNDAI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 34",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "96ba75fc-6a30-4813-a725-84e55ed58813",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"PASTRE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 35",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c4c73101-ce9f-44a4-aaf2-8e64afdcf3d9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"TANDER GRAHL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 36",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fd85fcf6-26d6-4516-a67d-8d500c81c1a7",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"HYALLE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 37",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e7f69ed7-b52e-4517-b20b-cf1070d0379f",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"IVECO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 38",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "56842019-a55b-408e-88fa-810888b7f1f0",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"VW/25.370 CLM T 6X2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 39",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8a244ca3-562e-49a5-8fca-22988cf82f37",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"V.W\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 40",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5aed0297-a208-46dd-b261-845592c0e44b",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"REATCHSTACHER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 41",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02698ef1-8ded-40b0-a386-980b3de391bf",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"KALMAR\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 42",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "874d2e96-9342-43c0-aefe-bad2c19b7ff8",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"IMAROL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 43",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7c4e0e1d-bcff-4e1b-a49f-b12060e44ea5",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"MITSUBISHI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 44",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cadbd351-faed-4042-babf-57fab879cf53",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"M.BENZ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 45",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f87105c9-f7be-4da5-b00e-03cc08913f37",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"ATEGO 1726\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 46",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71951e56-ecde-4254-815e-a0d0bea7a5b3",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"HZM CTR\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 47",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "86848aa4-4d34-45ab-977e-66ae37ae9625",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"LENCOIS SRL SRPCTEXT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 48",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "90a9dd5d-01fb-4494-a246-60f6b2b9dac4",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"CABRINI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 49",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b46e952d-fa02-42a4-bd35-bc70742f4f81",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"RODOFORT SRR PL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 50",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d117c44-129f-49f6-91d2-7edb6d0df6a2",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"ROLDANA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 51",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "86ae0eec-dea5-4bd2-b08e-1315ba29e9a1",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"CLARCK\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 52",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e368ea55-97f4-4ebd-ad08-61075d174c47",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"HELI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 53",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "275fcfb3-5253-49eb-9fce-5137b578e864",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"LIBERATO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 54",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8312403d-0c1c-40ae-b282-4663718a28e4",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMarca\":\"SCHRADER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "buscar",
+					"item": [
+						{
+							"name": "buscarPorId - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "53e9a448-6aa8-4d11-b563-f57f34db6091",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtOperador}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/marca/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "modelo",
+			"item": [
+				{
+					"name": "inserir",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "buscar",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
