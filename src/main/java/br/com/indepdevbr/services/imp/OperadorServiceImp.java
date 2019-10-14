@@ -36,14 +36,14 @@ public class OperadorServiceImp extends SuperClasse<OperadorRepository> implemen
 	}
 
 	@Override
-	public void cadastrar(Transportadora transportadora, Operador operador) {
+	public Operador cadastrar(Transportadora transportadora, Operador operador) {
 		try {
 			Usuario usuario = usuarioServiceImp.inserir(operador.getUsuario());
 			operador.setUsuario(usuario);
 			operador.setTransportadora(transportadora);
-			repository.save(operador);
+			return repository.save(operador);
 		} catch (Exception e) {
-			
+			throw new BittruckException("Ocorreu um problema ao processar a requisição", e);
 		}
 	}
 

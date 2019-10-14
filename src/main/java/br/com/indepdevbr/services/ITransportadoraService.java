@@ -4,6 +4,6 @@ import br.com.indepdevbr.models.dto.TransportadoraOperador;
 
 public interface ITransportadoraService {
 	
-	public void cadastrarTransportadoraOperador(TransportadoraOperador transportadoraOperador);
+	public TransportadoraOperador cadastrarTransportadoraOperador(TransportadoraOperador transportadoraOperador);
 	
 }
