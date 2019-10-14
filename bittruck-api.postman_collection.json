@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "1ed8a74b-3ea2-4baa-9f26-4934c7795715",
+		"name": "bittruck-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cadastro",
+			"item": [
+				{
+					"name": "motorista",
+					"item": [
+						{
+							"name": "cadastro - 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"Esther Carla Rezende\",\n\t\"desEmail\":\"esther@email.com\",\n\t\"datNascimento\":\"19/08/1939\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"78999630609\",\n\t\"codCnh\":\"16133180489\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"esther@email.com\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bittruck-api.herokuapp.com/api/cadastro/motorista",
+									"protocol": "https",
+									"host": [
+										"bittruck-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cadastro - 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomMotorista\": \"Enrico Cláudio Gomes\",\n\t\"desEmail\":\"enrico@email.com\",\n\t\"datNascimento\":\"23/11/1976\",\n\t\"tpoDocumento\":\"CPF\",\n\t\"codDocumento\": \"09696627009\",\n\t\"codCnh\":\"62131825600\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"enrico@email.com\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"MOTORISTA\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cadastro/motorista",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cadastro",
+										"motorista"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "transportadora-operador",
+					"item": [
+						{
+							"name": "cadastro - 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"desRazaoSocial\":\"Patrícia e Nair Pães e Doces ME\",\n\t\"codCnpj\":\"74282971000108\",\n\t\"desEmailContato\":\"qualidade@patriciaenairpaesedocesme.com.br\",\n\t\"numTelefone\": \"1637188588\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"Raimundo Miguel Mateus Gomes\",\n\t\t\"codCpf\":\"69067298298\",\n\t\t\"desEmail\":\"raimundo@email.com\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"raimundo@email.com\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"13564871\",\n\t\t\"desLogradouro\":\"Travessa Três\",\n\t\t\"numLogradouro\":\"586\",\n\t\t\"desCompletemento\":\"\",\n\t\t\"nomBairro\":\"Encontro Valparaíso I\",\n\t\t\"nomCidade\":\"São Carlos\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cadastro/transportadora_operador",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cadastro",
+										"transportadora_operador"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "autenticação",
+			"item": [
+				{
+					"name": "motorista",
+					"item": [
+						{
+							"name": "logar - 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\"codLogin\":\"esther@email.com\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bittruck-api.herokuapp.com/api/autenticacao/login",
+									"protocol": "https",
+									"host": [
+										"bittruck-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"autenticacao",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logar - 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\"codLogin\":\"enrico@email.com\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/autenticacao/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"autenticacao",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "operador",
+					"item": [
+						{
+							"name": "logar - 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\t\"codLogin\":\"raimundo@email.com\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/autenticacao/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"autenticacao",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "motorista",
+			"item": [
+				{
+					"name": "buscarPorId - 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://bittruck-api.herokuapp.com/api/motorista/1",
+							"protocol": "https",
+							"host": [
+								"bittruck-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"motorista",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
