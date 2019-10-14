@@ -35,7 +35,6 @@ public class Endereco extends AuditModel {
 	@NotNull
 	private String numLogradouro;
 	
-	@NotNull
 	private String desCompletemento;
 	
 	@NotNull

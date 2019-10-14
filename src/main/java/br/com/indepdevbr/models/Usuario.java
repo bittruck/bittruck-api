@@ -67,6 +67,16 @@ public class Usuario extends AuditModel {
 	@NotNull
 	private ENivelPermissao tpoPermissao = ENivelPermissao.DEFAULT;
 
+	
+	public Usuario() {}
+	
+	public Usuario(String codLogin, String desSenha, ESimNao mcaAtivo, ENivelPermissao tpoPermissao) {
+		this.codLogin = codLogin;
+		this.desSenha = desSenha;
+		this.mcaAtivo = mcaAtivo;
+		this.tpoPermissao = tpoPermissao;
+	}
+	
 	public Long getId() {
 		return id;
 	}
