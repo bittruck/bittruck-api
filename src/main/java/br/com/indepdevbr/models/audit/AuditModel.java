@@ -50,5 +50,44 @@ public abstract class AuditModel implements Serializable  {
 	public void setAtualizadoEm(Date atualizadoEm) {
 		this.atualizadoEm = atualizadoEm;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((atualizadoEm == null) ? 0 : atualizadoEm.hashCode());
+		result = prime * result + ((criadoEm == null) ? 0 : criadoEm.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AuditModel other = (AuditModel) obj;
+		if (atualizadoEm == null) {
+			if (other.atualizadoEm != null)
+				return false;
+		} else if (!atualizadoEm.equals(other.atualizadoEm))
+			return false;
+		if (criadoEm == null) {
+			if (other.criadoEm != null)
+				return false;
+		} else if (!criadoEm.equals(other.criadoEm))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "AuditModel=["
+					+ "criadoEm=" + criadoEm 
+					+ ", atualizadoEm=" + atualizadoEm 
+					+ "]";
+	}		
 		
 }
