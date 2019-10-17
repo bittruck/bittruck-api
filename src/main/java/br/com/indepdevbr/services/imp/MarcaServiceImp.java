@@ -1,5 +1,6 @@
 package br.com.indepdevbr.services.imp;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -79,6 +80,16 @@ public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMa
 			} else {
 				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 			}
+		}
+	}
+
+	@Override
+	public List<Marca> buscarPorNomMarcaContem(String nomMarca) {
+		try {
+			List<Marca> marcas = repository.findByNomMarcaContaining(nomMarca);
+			return marcas;
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}
 	}
 

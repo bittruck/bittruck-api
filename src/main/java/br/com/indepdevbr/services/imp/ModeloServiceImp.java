@@ -1,5 +1,7 @@
 package br.com.indepdevbr.services.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -79,6 +81,16 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 			} else {
 				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 			}
+		}
+	}
+
+	@Override
+	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo) {
+		try {
+			List<Modelo> modelos = repository.findByMarcaIdAndNomModeloContaining(marcaId, nomModelo);
+			return modelos;
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}
 	}
 

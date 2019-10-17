@@ -1,5 +1,7 @@
 package br.com.indepdevbr.services;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -10,6 +12,8 @@ public interface IModeloService {
 	public Modelo buscarPorIdEIdMarca(Long id, Long idMarca);
 	
 	public Page<Modelo> listarPaginadoPorIdMarca(Long idMarca, Pageable pageable);
+	
+	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo);
 	
 	public Modelo inserir(Long idMarca, Modelo modelo);
 	

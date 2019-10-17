@@ -1,5 +1,6 @@
 package br.com.indepdevbr.services.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -17,5 +18,7 @@ public interface ModeloRepository extends JpaRepository<Modelo, Long> {
 	public Page<Modelo> findByMarcaId(Long marcaId, Pageable pageable);
 	
 	public boolean existsByIdAndMarcaId(Long id, Long marcaId);
+	
+	public List<Modelo> findByMarcaIdAndNomModeloContaining(Long marcaId, String nomModelo);
 	
 }

@@ -1,5 +1,7 @@
 package br.com.indepdevbr.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.indepdevbr.models.Marca;
@@ -35,6 +38,13 @@ public class MarcaController {
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
 	public Page<Marca> listarPaginado(Pageable pageable) {
 		return marcaServiceImp.listarPaginado(pageable);
+	}
+	
+	@GetMapping("/contem")
+	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
+	public List<Marca> buscarPorNomMarcaContem(
+			@RequestParam("nomMarca") String nomMarca) {
+		return marcaServiceImp.buscarPorNomMarcaContem(nomMarca);
 	}
 	
 	@PostMapping

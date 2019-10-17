@@ -1,5 +1,7 @@
 package br.com.indepdevbr.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.indepdevbr.models.Modelo;
@@ -38,6 +41,13 @@ public class ModeloController {
 	public Page<Modelo> listarPaginadoPorIdMarca(@PathVariable("idMarca") Long idMarca,
 			Pageable pageable) {
 		return modeloServiceImp.listarPaginadoPorIdMarca(idMarca, pageable);
+	}
+	
+	@GetMapping("/contem")
+	public List<Modelo> buscarPorIdMarcaENomModeloContem(
+			@PathVariable("idMarca") Long idMarca,
+			@RequestParam("nomModelo") String nomModelo) {		
+		return modeloServiceImp.buscarPorIdMarcaENomModeloContem(idMarca, nomModelo);
 	}
 	
 	@PostMapping

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fe52a778-391c-43bf-868d-5889ecbe895c",
+		"_postman_id": "8f922670-3708-4cf7-9167-b0da6a5e8ceb",
 		"name": "bittruck-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -997,7 +997,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"desRazaoSocial\":\"RAPIDO TRANSPAULO LTDA\",\n\t\"codCnpj\":\"88317847003403\",\n\t\"desEmailContato\":\"contato@rapidotranspaulo.com.br\",\n\t\"numTelefone\": \"2138189200\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"PAULO TREU\",\n\t\t\"codCpf\":\"41243501715\",\n\t\t\"desEmail\":\"raimundo@email.com\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"paulo_treu@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"13175070\",\n\t\t\"desLogradouro\":\"Rua Joaquim Ignácio Valente\",\n\t\t\"numLogradouro\":\"291\",\n\t\t\"nomBairro\":\"Jardim Bela Vista\",\n\t\t\"nomCidade\":\"Sumare\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
+									"raw": "{\n\t\"desRazaoSocial\":\"RAPIDO TRANSPAULO LTDA\",\n\t\"codCnpj\":\"88317847003403\",\n\t\"desEmailContato\":\"contato@rapidotranspaulo.com.br\",\n\t\"numTelefone\": \"2138189200\",\n\t\"operador\": {\n\t\t\"nomOperador\":\"PAULO TREU\",\n\t\t\"codCpf\":\"41243501715\",\n\t\t\"desEmail\":\"paulo_treu@email.com.br\",\n\t\t\"usuario\": {\n\t\t\t\"codLogin\":\"paulo_treu@email.com.br\",\n\t\t\t\"desSenha\":\"123456\",\n\t\t\t\"tpoPermissao\":\"OPERADOR_ADMIN\"\n\t\t}\n\t},\n\t\"endereco\": {\n\t\t\"codCep\":\"13175070\",\n\t\t\"desLogradouro\":\"Rua Joaquim Ignácio Valente\",\n\t\t\"numLogradouro\":\"291\",\n\t\t\"nomBairro\":\"Jardim Bela Vista\",\n\t\t\"nomCidade\":\"Sumare\",\n\t\t\"nomEstado\":\"SP\"\n\t}\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1184,6 +1184,21 @@
 						},
 						{
 							"name": "logar - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8aa81cf6-2bbf-4701-9f18-c02d93ebbd50",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1395,6 +1410,21 @@
 			"item": [
 				{
 					"name": "buscarPorId - 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2beaff8-cba7-47ce-81f6-cfc56c59e479",
+								"exec": [
+									"pm.test(\"Status 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4347,7 +4377,3693 @@
 			"item": [
 				{
 					"name": "inserir",
-					"item": [],
+					"item": [
+						{
+							"name": "inserir - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"FH 400\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"N10 INTERCOOLER II\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NL 10 340\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NL10 280\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"N10 XH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NH 12380 4X2T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 7",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NL12 360 4X2T EDC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NL 340 4X2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 9",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"NL10 4X2T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"N12 XH TC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 11",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"TRA/C. TRATOR / NÃO APLIC.\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 12",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"VOLVO/NL 10 320  4X2  EDC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 13",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"N10 TURBO 2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 14",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"N10 HT IC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 15",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"FH12 380 4X2T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 16",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"VM 3104X2T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 17",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"FH 500 6 X 4T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 18",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"VOLVO FH 480 6X4T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 19",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"P114\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 20",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LK 141\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 21",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T112 H 4X2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 22",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L110\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 23",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L111S\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 24",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"R142 H 4X2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 25",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T113 H 4X2 360\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 26",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T112 HW 4X2 310\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 27",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T124 GA4X2NZ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 28",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"SCANIA-VABIS 75\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 29",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"SCANIA B 110\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 30",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"SCANIA-VABIS 76\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 31",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T142 H 4X2 S\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 32",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"T113 H 4 X 2 320\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 33",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 110\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 34",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"R112 H\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 35",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LK 140\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 36",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 76\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 37",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"SCANIA/R124 GA 4X2NZ 400\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 38",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"G 420 A6 X20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 39",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L101\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 40",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"R114LA6X2NA 380\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 41",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"R113 H 4X2 32\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/2/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"2",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 42",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"CARGO 4031\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 43",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"FORD/CARGO 4030\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 44",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"CARGO 4331\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 45",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"CARGO 1933T\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 46",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"CARGO 4532E\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 47",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"CARGO 4432 E\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/4/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"4",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 48",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1632\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 49",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1935\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 50",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1630\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 51",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1634\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 52",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L 1318\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 53",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1933\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 54",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"AXOR 1933S\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 55",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1929\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 56",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1632\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 57",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1934\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 58",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"M.BENZ L 1519\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 59",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"AXOR 2640S 6X4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 60",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L 1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 61",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"ACTROS2646LS 6X4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 62",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L1620\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 63",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1525\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 64",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"LS 1924\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 65",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L 312\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 66",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"L 1519\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 67",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2753cae2-dd04-49b6-a159-222f2e32f7f9",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtAdmin}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomModelo\":\"1720\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/marca/5/modelo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"5",
+										"modelo"
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
