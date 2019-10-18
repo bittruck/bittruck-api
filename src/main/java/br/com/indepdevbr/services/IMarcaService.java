@@ -1,7 +1,5 @@
 package br.com.indepdevbr.services;
 
-
-
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -20,5 +18,7 @@ public interface IMarcaService {
 	public Marca inserir(Marca marca);
 	
 	public Marca atualizar(Marca marca);
+
+	public List<Marca> listarTodos();
 	
 }

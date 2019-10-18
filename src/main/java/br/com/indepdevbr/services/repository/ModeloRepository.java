@@ -17,6 +17,8 @@ public interface ModeloRepository extends JpaRepository<Modelo, Long> {
 	
 	public Page<Modelo> findByMarcaId(Long marcaId, Pageable pageable);
 	
+	public List<Modelo> findByMarcaId(Long marcaId);
+	
 	public boolean existsByIdAndMarcaId(Long id, Long marcaId);
 	
 	public List<Modelo> findByMarcaIdAndNomModeloContaining(Long marcaId, String nomModelo);

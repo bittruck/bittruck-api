@@ -2,6 +2,7 @@ package br.com.indepdevbr.services.imp;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,6 +41,20 @@ public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMa
 					.map( page -> {
 						return page;
 					});
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
+		}
+	}
+	
+	@Override
+	public List<Marca> listarTodos() {
+		try {
+			return repository.findAll()
+					.stream()
+					.map( marcas -> {
+						return marcas;
+					})
+					.collect(Collectors.toList());
 		} catch (Exception e) {
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}

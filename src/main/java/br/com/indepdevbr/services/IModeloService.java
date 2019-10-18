@@ -13,6 +13,8 @@ public interface IModeloService {
 	
 	public Page<Modelo> listarPaginadoPorIdMarca(Long idMarca, Pageable pageable);
 	
+	public List<Modelo> listarTodosPorIdMarca(Long idMarca);
+	
 	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo);
 	
 	public Modelo inserir(Long idMarca, Modelo modelo);

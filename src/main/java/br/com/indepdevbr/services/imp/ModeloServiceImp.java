@@ -1,6 +1,7 @@
 package br.com.indepdevbr.services.imp;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,6 +46,20 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 					.map( modelos -> {
 						return modelos;
 					});
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
+		}
+	}
+	
+	@Override
+	public List<Modelo> listarTodosPorIdMarca(Long idMarca) {
+		try {
+			return repository.findByMarcaId(idMarca)
+								.stream()
+								.map( modelos -> {
+									return modelos;
+								})
+								.collect(Collectors.toList());
 		} catch (Exception e) {
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}

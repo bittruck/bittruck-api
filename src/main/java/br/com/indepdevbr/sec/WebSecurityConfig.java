@@ -52,11 +52,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.csrf().disable()
 			.authorizeRequests()
-				.antMatchers("/autenticacao/login").permitAll()
-				.antMatchers("/cadastro/transportadora_operador").permitAll()
-				.antMatchers("/cadastro/motorista").permitAll()
-				.antMatchers("/v2/api-docs").permitAll()
-				.antMatchers("/swagger-ui.html").permitAll()
+				.antMatchers(
+						"/autenticacao/login",
+						"/cadastro/transportadora_operador",
+						"/cadastro/motorista",
+						"/swagger-resources/configuration/ui",
+						"/swagger-resources/configuration/security",
+						"/csrf",
+						"/v2/api-docs",
+						"/swagger-ui.html"
+						).permitAll()
 				.anyRequest().authenticated()
 					.and()
 				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
