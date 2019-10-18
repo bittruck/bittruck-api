@@ -1,5 +1,8 @@
 package br.com.indepdevbr.services.imp;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,6 +50,20 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}
 	}
+	
+	@Override
+	public List<Modelo> listarTodosPorIdMarca(Long idMarca) {
+		try {
+			return repository.findByMarcaId(idMarca)
+								.stream()
+								.map( modelos -> {
+									return modelos;
+								})
+								.collect(Collectors.toList());
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
+		}
+	}
 
 	@Override
 	public Modelo inserir(Long idMarca, Modelo modelo) {
@@ -79,6 +96,16 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 			} else {
 				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 			}
+		}
+	}
+
+	@Override
+	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo) {
+		try {
+			List<Modelo> modelos = repository.findByMarcaIdAndNomModeloContaining(marcaId, nomModelo);
+			return modelos;
+		} catch (Exception e) {
+			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}
 	}
 

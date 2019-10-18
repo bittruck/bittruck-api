@@ -7,5 +7,5 @@ import br.com.indepdevbr.models.Procedimento;
 
 @Repository
 public interface ProcedimentoRepository extends JpaRepository<Procedimento, Long> {
-
+	
 }

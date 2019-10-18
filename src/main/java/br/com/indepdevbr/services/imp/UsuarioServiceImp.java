@@ -56,7 +56,7 @@ public class UsuarioServiceImp extends SuperClasse<UsuarioRepository> implements
 			if(passwordEncoder.matches(usuario.getDesSenha(), usuarioPersist.getDesSenha()))
 				return usuarioPersist;
 			else
-				throw new RecursoNaoEncontradoException("Combinação usuário e senha inválida");
+				throw new BittruckException("Combinação usuário e senha inválida");
 		} catch (Exception e) {
 			if(e instanceof RecursoNaoEncontradoException) {
 				throw e;

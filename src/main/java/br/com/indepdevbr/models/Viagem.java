@@ -49,6 +49,20 @@ public class Viagem extends AuditModel {
 	)
 	private Long id;
 	
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private Date datInicio;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private Date datFim;
+	
+	private BigDecimal valViagem;
+	
+	@Enumerated(EnumType.STRING)
+	private EFaseViagem tpoFaseViagem;
+	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "transportadora_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -98,19 +112,6 @@ public class Viagem extends AuditModel {
 			}
 	)
 	private Set<Carga> cargas = new HashSet<>();
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
-	private Date datInicio;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
-	private Date datFim;
-	
-	private BigDecimal valViagem;
-	
-	@Enumerated(EnumType.STRING)
-	private EFaseViagem tpoFaseViagem;
 
 	public Long getId() {
 		return id;
@@ -118,6 +119,38 @@ public class Viagem extends AuditModel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Date getDatInicio() {
+		return datInicio;
+	}
+
+	public void setDatInicio(Date datInicio) {
+		this.datInicio = datInicio;
+	}
+
+	public Date getDatFim() {
+		return datFim;
+	}
+
+	public void setDatFim(Date datFim) {
+		this.datFim = datFim;
+	}
+
+	public BigDecimal getValViagem() {
+		return valViagem;
+	}
+
+	public void setValViagem(BigDecimal valViagem) {
+		this.valViagem = valViagem;
+	}
+
+	public EFaseViagem getTpoFaseViagem() {
+		return tpoFaseViagem;
+	}
+
+	public void setTpoFaseViagem(EFaseViagem tpoFaseViagem) {
+		this.tpoFaseViagem = tpoFaseViagem;
 	}
 
 	public Transportadora getTransportadora() {
@@ -160,36 +193,98 @@ public class Viagem extends AuditModel {
 		this.cargas = cargas;
 	}
 
-	public Date getDatInicio() {
-		return datInicio;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cargas == null) ? 0 : cargas.hashCode());
+		result = prime * result + ((datFim == null) ? 0 : datFim.hashCode());
+		result = prime * result + ((datInicio == null) ? 0 : datInicio.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((motorista == null) ? 0 : motorista.hashCode());
+		result = prime * result + ((operador == null) ? 0 : operador.hashCode());
+		result = prime * result + ((tpoFaseViagem == null) ? 0 : tpoFaseViagem.hashCode());
+		result = prime * result + ((transportadora == null) ? 0 : transportadora.hashCode());
+		result = prime * result + ((valViagem == null) ? 0 : valViagem.hashCode());
+		result = prime * result + ((veiculo == null) ? 0 : veiculo.hashCode());
+		return result;
 	}
 
-	public void setDatInicio(Date datInicio) {
-		this.datInicio = datInicio;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Viagem other = (Viagem) obj;
+		if (cargas == null) {
+			if (other.cargas != null)
+				return false;
+		} else if (!cargas.equals(other.cargas))
+			return false;
+		if (datFim == null) {
+			if (other.datFim != null)
+				return false;
+		} else if (!datFim.equals(other.datFim))
+			return false;
+		if (datInicio == null) {
+			if (other.datInicio != null)
+				return false;
+		} else if (!datInicio.equals(other.datInicio))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (motorista == null) {
+			if (other.motorista != null)
+				return false;
+		} else if (!motorista.equals(other.motorista))
+			return false;
+		if (operador == null) {
+			if (other.operador != null)
+				return false;
+		} else if (!operador.equals(other.operador))
+			return false;
+		if (tpoFaseViagem != other.tpoFaseViagem)
+			return false;
+		if (transportadora == null) {
+			if (other.transportadora != null)
+				return false;
+		} else if (!transportadora.equals(other.transportadora))
+			return false;
+		if (valViagem == null) {
+			if (other.valViagem != null)
+				return false;
+		} else if (!valViagem.equals(other.valViagem))
+			return false;
+		if (veiculo == null) {
+			if (other.veiculo != null)
+				return false;
+		} else if (!veiculo.equals(other.veiculo))
+			return false;
+		return true;
 	}
 
-	public Date getDatFim() {
-		return datFim;
-	}
-
-	public void setDatFim(Date datFim) {
-		this.datFim = datFim;
-	}
-
-	public BigDecimal getValViagem() {
-		return valViagem;
-	}
-
-	public void setValViagem(BigDecimal valViagem) {
-		this.valViagem = valViagem;
-	}
-
-	public EFaseViagem getTpoFaseViagem() {
-		return tpoFaseViagem;
-	}
-
-	public void setTpoFaseViagem(EFaseViagem tpoFaseViagem) {
-		this.tpoFaseViagem = tpoFaseViagem;
+	@Override
+	public String toString() {
+		return "Viagem=["
+						+ "id=" + id 
+						+ ", datInicio=" + datInicio 
+						+ ", datFim=" + datFim 
+						+ ", valViagem=" + valViagem
+						+ ", tpoFaseViagem=" + tpoFaseViagem 
+						+ ", transportadora=" + transportadora 
+						+ ", operador=" + operador
+						+ ", motorista=" + motorista 
+						+ ", veiculo=" + veiculo 
+						+ ", cargas=" + cargas 
+						+ "]";
 	}
 	
+	
+		
 }
