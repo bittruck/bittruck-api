@@ -48,7 +48,7 @@ public class ModeloController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/{idModelo}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/{idModelo}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
 	public Modelo buscarPorIdEIdMarca(
 			@PathVariable("idMarca") Long idMarca,
@@ -68,7 +68,7 @@ public class ModeloController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Modelo> listarTodosPorIdMarca(
 			@PathVariable("idMarca") Long idMarca
 			) {
@@ -90,7 +90,7 @@ public class ModeloController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/paginado", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/paginado", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA","OPERADOR","OPERADOR_ADMIN"})
 	public Page<Modelo> listarPaginadoPorIdMarca(@PathVariable("idMarca") Long idMarca,
 			Pageable pageable) {
@@ -110,7 +110,7 @@ public class ModeloController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Modelo> buscarPorIdMarcaENomModeloContem(
 			@PathVariable("idMarca") Long idMarca,
 			@RequestParam("nomModelo") String nomModelo) {		

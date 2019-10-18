@@ -49,7 +49,7 @@ public class MarcaController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/{idMarca}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/{idMarca}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
 	public Marca buscarPorId(@PathVariable("idMarca") Long idMarca) {
 		return marcaServiceImp.buscarPorId(idMarca);
@@ -67,7 +67,7 @@ public class MarcaController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Marca> listarTodos() {
 		return marcaServiceImp.listarTodos();
 	}
@@ -86,7 +86,7 @@ public class MarcaController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/paginado", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/paginado", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
 	public Page<Marca> listarPaginado(Pageable pageable) {
 		return marcaServiceImp.listarPaginado(pageable);
@@ -106,7 +106,7 @@ public class MarcaController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
 	public List<Marca> buscarPorNomMarcaContem(
 			@RequestParam("nomMarca") String nomMarca) {
