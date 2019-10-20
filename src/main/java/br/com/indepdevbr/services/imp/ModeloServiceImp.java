@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 	private MarcaRepository marcaRepository;
 	
 	@Override
+	@Cacheable("modelos")
 	public Modelo buscarPorIdEIdMarca(Long id, Long idMarca) {
 		try {
 			return repository.findByIdAndMarcaId(id, idMarca)
@@ -40,6 +42,7 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 	}
 
 	@Override
+	@Cacheable("modelos")
 	public Page<Modelo> listarPaginadoPorIdMarca(Long idMarca, Pageable pageable) {
 		try {
 			return repository.findByMarcaId(idMarca, pageable)
@@ -52,6 +55,7 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 	}
 	
 	@Override
+	@Cacheable("modelos")
 	public List<Modelo> listarTodosPorIdMarca(Long idMarca) {
 		try {
 			return repository.findByMarcaId(idMarca)
@@ -100,9 +104,10 @@ public class ModeloServiceImp extends SuperClasse<ModeloRepository> implements I
 	}
 
 	@Override
-	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo) {
+	@Cacheable("modelos")
+	public List<Modelo> buscarPorIdMarcaENomModeloComecaCom(Long marcaId, String nomModelo) {
 		try {
-			List<Modelo> modelos = repository.findByMarcaIdAndNomModeloContaining(marcaId, nomModelo);
+			List<Modelo> modelos = repository.findByMarcaIdAndNomModeloStartsWith(marcaId, nomModelo);
 			return modelos;
 		} catch (Exception e) {
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);

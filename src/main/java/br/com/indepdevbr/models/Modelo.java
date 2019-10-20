@@ -1,5 +1,6 @@
 package br.com.indepdevbr.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -39,6 +40,7 @@ public class Modelo extends AuditModel {
 	
 	@NotNull
 	@NotBlank
+	@Column(unique = true)
 	private String nomModelo;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)

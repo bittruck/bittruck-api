@@ -23,4 +23,6 @@ public interface ModeloRepository extends JpaRepository<Modelo, Long> {
 	
 	public List<Modelo> findByMarcaIdAndNomModeloContaining(Long marcaId, String nomModelo);
 	
+	public List<Modelo> findByMarcaIdAndNomModeloStartsWith(Long marcaId, String nomModelo);
+	
 }

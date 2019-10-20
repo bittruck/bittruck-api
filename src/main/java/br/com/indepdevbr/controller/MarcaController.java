@@ -94,7 +94,7 @@ public class MarcaController {
 	
 	
 	@ApiOperation(value = "Endpoint de buscar Marca por iniciais compativeis. Para isso, é necessário enviar o parametro nomMarca na URL."
-			+ " Exemplo: /marca/contem?nomMarca=VOL. Retornará todas as marcas que contém VOL no nome")
+			+ " Exemplo: /marca/contem?nomMarca=VOL. Retornará todas as marcas que começam com VOL no nome")
 	@ApiResponses({
 		@ApiResponse(
 				code = 200, 
@@ -106,11 +106,11 @@ public class MarcaController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/comeca_com", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
-	public List<Marca> buscarPorNomMarcaContem(
+	public List<Marca> buscarPorNomMarcaComecaCom(
 			@RequestParam("nomMarca") String nomMarca) {
-		return marcaServiceImp.buscarPorNomMarcaContem(nomMarca);
+		return marcaServiceImp.buscarPorNomMarcaComecaCom(nomMarca);
 	}
 	
 	

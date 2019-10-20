@@ -1,28 +1,20 @@
 package br.com.indepdevbr.models;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.com.indepdevbr.models.audit.AuditModel;
 import br.com.indepdevbr.models.enums.ESimNao;
+import br.com.indepdevbr.models.emb.Endereco;
 
 @Entity
 public class Transportadora extends AuditModel {
@@ -60,12 +52,7 @@ public class Transportadora extends AuditModel {
 	private String numTelefone;
 	
 
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "endereco_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("endereco_id")
+	@Embedded
 	private Endereco endereco;
 			
 	public Transportadora() {}

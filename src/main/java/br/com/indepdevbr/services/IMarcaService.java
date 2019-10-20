@@ -13,7 +13,7 @@ public interface IMarcaService {
 	
 	public Page<Marca> listarPaginado(Pageable pageable);
 	
-	public List<Marca> buscarPorNomMarcaContem(String nomMarca);
+	public List<Marca> buscarPorNomMarcaComecaCom(String nomMarca);
 	
 	public Marca inserir(Marca marca);
 	

@@ -12,4 +12,6 @@ public interface MarcaRepository extends JpaRepository<Marca, Long> {
 	
 	List<Marca> findByNomMarcaContaining(String nomMarca);
 	
+	List<Marca> findByNomMarcaStartsWith(String nomMarca);
+	
 }

@@ -103,12 +103,28 @@ public class Carga extends AuditModel {
 	private Endereco enderecoRetirada;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "endereco_complementar_retirada_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+    @JsonIdentityReference(alwaysAsId=true)
+    @JsonProperty("endereco_complementar_retirada_id")
+	private EnderecoComplementar enderecoComplementarRetirada;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "endereco_entrega_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
     @JsonIdentityReference(alwaysAsId=true)
     @JsonProperty("endereco_entrega_id")
 	private Endereco enderecoEntrega;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "endereco_complementar_entrega_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+    @JsonIdentityReference(alwaysAsId=true)
+    @JsonProperty("endereco_complementar_entrega_id")
+	private EnderecoComplementar enderecoComplementarEntrega;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "procedimento_id", nullable = false)
@@ -363,8 +379,8 @@ public class Carga extends AuditModel {
 					+ ", transportadora=" + transportadora 
 					+ ", operador=" + operador
 					+ ", enderecoRetirada=" + enderecoRetirada 
-					+ ", enderecoEntrega=" + enderecoEntrega + ", procedimento="
-					+ procedimento 
+					+ ", enderecoEntrega=" + enderecoEntrega 
+					+ ", procedimento=" + procedimento 
 					+ "]";
 	}
 	

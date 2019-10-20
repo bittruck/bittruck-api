@@ -98,7 +98,7 @@ public class ModeloController {
 	}
 	
 	@ApiOperation(value = "Endpoint de buscar Modelo por iniciais compativeis. Para isso, é necessário enviar o parametro nomModelo na URL."
-			+ " Exemplo: /marca/1/modelo/contem?nomModelo=VOL. Retornará todas os modelos que contém VOL no nome e idMarca = 1")
+			+ " Exemplo: /marca/1/modelo/contem?nomModelo=VOL. Retornará todas os modelos que começam VOL no nome e idMarca = 1")
 	@ApiResponses({
 		@ApiResponse(
 				code = 200, 
@@ -110,11 +110,11 @@ public class ModeloController {
 				code = 500, 
 				message = "Ocorreu um erro ao processar a requisição"), }
 	)
-	@GetMapping(value = "/contem", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public List<Modelo> buscarPorIdMarcaENomModeloContem(
+	@GetMapping(value = "/comeca_com", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Modelo> buscarPorIdMarcaENomModeloComecaCom(
 			@PathVariable("idMarca") Long idMarca,
 			@RequestParam("nomModelo") String nomModelo) {		
-		return modeloServiceImp.buscarPorIdMarcaENomModeloContem(idMarca, nomModelo);
+		return modeloServiceImp.buscarPorIdMarcaENomModeloComecaCom(idMarca, nomModelo);
 	}
 	
 	

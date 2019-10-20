@@ -15,7 +15,7 @@ public interface IModeloService {
 	
 	public List<Modelo> listarTodosPorIdMarca(Long idMarca);
 	
-	public List<Modelo> buscarPorIdMarcaENomModeloContem(Long marcaId, String nomModelo);
+	public List<Modelo> buscarPorIdMarcaENomModeloComecaCom(Long marcaId, String nomModelo);
 	
 	public Modelo inserir(Long idMarca, Modelo modelo);
 	
