@@ -2,6 +2,7 @@ package br.com.indepdevbr.services.imp;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import br.com.indepdevbr.models.Procedimento;
@@ -15,6 +16,7 @@ import br.com.indepdevbr.services.repository.ProcedimentoRepository;
 public class ProcedimentoServiceImp extends SuperClasse<ProcedimentoRepository> implements IProcedimentoService {
 
 	@Override
+	@Cacheable("procecimentos")
 	public Procedimento buscarPorId(Long id) {
 		try {
 			return repository.findById(id)
@@ -32,6 +34,7 @@ public class ProcedimentoServiceImp extends SuperClasse<ProcedimentoRepository> 
 	}
 
 	@Override
+	@Cacheable("procecimentos")
 	public List<Procedimento> listarTodos() {
 		try {
 			List<Procedimento> procedimentos = repository.findAll();

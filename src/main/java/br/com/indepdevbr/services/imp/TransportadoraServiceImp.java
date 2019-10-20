@@ -3,11 +3,12 @@ package br.com.indepdevbr.services.imp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.indepdevbr.models.Endereco;
 import br.com.indepdevbr.models.Operador;
 import br.com.indepdevbr.models.Transportadora;
 import br.com.indepdevbr.models.dto.TransportadoraOperador;
 import br.com.indepdevbr.models.exception.BittruckException;
+import br.com.indepdevbr.models.exception.ErroInternoException;
+import br.com.indepdevbr.models.exception.RecursoNaoEncontradoException;
 import br.com.indepdevbr.services.ITransportadoraService;
 import br.com.indepdevbr.services.abs.SuperClasse;
 import br.com.indepdevbr.services.repository.TransportadoraRepository;
@@ -17,19 +18,15 @@ public class TransportadoraServiceImp extends SuperClasse<TransportadoraReposito
 	
 	@Autowired
 	private OperadorServiceImp operadorServiceImp;
-	
-	@Autowired
-	private EnderecoServiceImp enderecoServiceImp;
 
 	@Override
 	public TransportadoraOperador cadastrarTransportadoraOperador(TransportadoraOperador transportadoraOperador) {
 		try {
-			Endereco endereco = enderecoServiceImp.inserir(transportadoraOperador.getEndereco());
 			Transportadora transportadora = repository.save(new Transportadora(transportadoraOperador.getDesRazaoSocial(), 
 															   transportadoraOperador.getDesEmailContato(), 
 															   transportadoraOperador.getCodCnpj(), 
 															   transportadoraOperador.getNumTelefone(), 
-															   endereco));
+															   transportadoraOperador.getEndereco()));
 			Operador operador = operadorServiceImp.cadastrar(transportadora, transportadoraOperador.getOperador());
 			TransportadoraOperador cadastroTransportadoraOperador = 
 					new TransportadoraOperador(transportadora.getId(), transportadora.getCriadoEm(), transportadora.getAtualizadoEm(),
@@ -40,6 +37,22 @@ public class TransportadoraServiceImp extends SuperClasse<TransportadoraReposito
 			return cadastroTransportadoraOperador;
 		} catch (Exception e) {
 			throw new BittruckException("Ocorreu um erro no processamento da requisição", e);
+		}
+	}
+
+	@Override
+	public Transportadora alterar(Transportadora transportadora) {
+		try {
+			if(repository.existsById(transportadora.getId())) {
+				throw new RecursoNaoEncontradoException("Nenhuma transportadora encontrada pelo id: " + transportadora.getId());
+			}
+			return repository.save(transportadora);
+		} catch (Exception e) {
+			if(e instanceof RecursoNaoEncontradoException) {
+				throw e;
+			} else {
+				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
+			}
 		}
 	}
 

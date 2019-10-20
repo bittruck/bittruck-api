@@ -32,10 +32,10 @@ public class Endereco extends AuditModel {
 	@NotNull
 	private String desLogradouro;
 	
-	@NotNull
-	private String numLogradouro;
-	
-	private String desCompletemento;
+//	@NotNull
+//	private String numLogradouro;
+//	
+//	private String desCompletemento;
 	
 	@NotNull
 	private String nomBairro;
@@ -72,21 +72,21 @@ public class Endereco extends AuditModel {
 		this.desLogradouro = desLogradouro;
 	}
 
-	public String getNumLogradouro() {
-		return numLogradouro;
-	}
-
-	public void setNumLogradouro(String numLogradouro) {
-		this.numLogradouro = numLogradouro;
-	}
-
-	public String getDesCompletemento() {
-		return desCompletemento;
-	}
-
-	public void setDesCompletemento(String desCompletemento) {
-		this.desCompletemento = desCompletemento;
-	}
+//	public String getNumLogradouro() {
+//		return numLogradouro;
+//	}
+//
+//	public void setNumLogradouro(String numLogradouro) {
+//		this.numLogradouro = numLogradouro;
+//	}
+//
+//	public String getDesCompletemento() {
+//		return desCompletemento;
+//	}
+//
+//	public void setDesCompletemento(String desCompletemento) {
+//		this.desCompletemento = desCompletemento;
+//	}
 
 	public String getNomBairro() {
 		return nomBairro;
@@ -117,13 +117,13 @@ public class Endereco extends AuditModel {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((codCep == null) ? 0 : codCep.hashCode());
-		result = prime * result + ((desCompletemento == null) ? 0 : desCompletemento.hashCode());
+//		result = prime * result + ((desCompletemento == null) ? 0 : desCompletemento.hashCode());
 		result = prime * result + ((desLogradouro == null) ? 0 : desLogradouro.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nomBairro == null) ? 0 : nomBairro.hashCode());
 		result = prime * result + ((nomCidade == null) ? 0 : nomCidade.hashCode());
 		result = prime * result + ((nomEstado == null) ? 0 : nomEstado.hashCode());
-		result = prime * result + ((numLogradouro == null) ? 0 : numLogradouro.hashCode());
+//		result = prime * result + ((numLogradouro == null) ? 0 : numLogradouro.hashCode());
 		return result;
 	}
 
@@ -141,11 +141,11 @@ public class Endereco extends AuditModel {
 				return false;
 		} else if (!codCep.equals(other.codCep))
 			return false;
-		if (desCompletemento == null) {
-			if (other.desCompletemento != null)
-				return false;
-		} else if (!desCompletemento.equals(other.desCompletemento))
-			return false;
+//		if (desCompletemento == null) {
+//			if (other.desCompletemento != null)
+//				return false;
+//		} else if (!desCompletemento.equals(other.desCompletemento))
+//			return false;
 		if (desLogradouro == null) {
 			if (other.desLogradouro != null)
 				return false;
@@ -171,11 +171,11 @@ public class Endereco extends AuditModel {
 				return false;
 		} else if (!nomEstado.equals(other.nomEstado))
 			return false;
-		if (numLogradouro == null) {
-			if (other.numLogradouro != null)
-				return false;
-		} else if (!numLogradouro.equals(other.numLogradouro))
-			return false;
+//		if (numLogradouro == null) {
+//			if (other.numLogradouro != null)
+//				return false;
+//		} else if (!numLogradouro.equals(other.numLogradouro))
+//			return false;
 		return true;
 	}
 
@@ -185,8 +185,8 @@ public class Endereco extends AuditModel {
 					+ "id=" + id 
 					+ ", codCep=" + codCep 
 					+ ", desLogradouro=" + desLogradouro 
-					+ ", numLogradouro=" + numLogradouro 
-					+ ", desCompletemento=" + desCompletemento 
+//					+ ", numLogradouro=" + numLogradouro 
+//					+ ", desCompletemento=" + desCompletemento 
 					+ ", nomBairro=" + nomBairro + ", nomCidade=" + nomCidade 
 					+ ", nomEstado=" + nomEstado 
 					+ "]";

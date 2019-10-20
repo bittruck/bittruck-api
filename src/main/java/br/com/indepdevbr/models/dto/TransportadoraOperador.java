@@ -2,7 +2,7 @@ package br.com.indepdevbr.models.dto;
 
 import java.util.Date;
 
-import br.com.indepdevbr.models.Endereco;
+import br.com.indepdevbr.models.emb.Endereco;
 import br.com.indepdevbr.models.Operador;
 import br.com.indepdevbr.models.Transportadora;
 import br.com.indepdevbr.models.enums.ESimNao;
@@ -10,8 +10,7 @@ import br.com.indepdevbr.models.enums.ESimNao;
 public class TransportadoraOperador extends Transportadora {
 
 	private static final long serialVersionUID = -363773068396960989L;
-	
-	private Endereco endereco;
+
 	
 	private Operador operador;
 	
@@ -31,7 +30,6 @@ public class TransportadoraOperador extends Transportadora {
 		this.setDesRazaoSocial(desRazaoSocial);
 		this.setNumTelefone(numTelefone);
 		this.setMcaAtivo(mcaAtivo);
-		this.endereco = endereco;
 		this.operador = operador;
 	}
 
@@ -43,19 +41,11 @@ public class TransportadoraOperador extends Transportadora {
 		this.operador = operador;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((operador == null) ? 0 : operador.hashCode());
 		return result;
 	}
@@ -69,11 +59,6 @@ public class TransportadoraOperador extends Transportadora {
 		if (getClass() != obj.getClass())
 			return false;
 		TransportadoraOperador other = (TransportadoraOperador) obj;
-		if (endereco == null) {
-			if (other.endereco != null)
-				return false;
-		} else if (!endereco.equals(other.endereco))
-			return false;
 		if (operador == null) {
 			if (other.operador != null)
 				return false;
@@ -93,7 +78,7 @@ public class TransportadoraOperador extends Transportadora {
 					+ ", numTelefone=" + getNumTelefone() 
 					+ ", criadoEm=" + getCriadoEm() 
 					+ ", atualizadoEm=" + getAtualizadoEm()
-					+ ", endereco=" + endereco 
+					+ ", endereco=" + getEndereco() 
 					+ ", operador=" + operador
 					+ "]";
 	}

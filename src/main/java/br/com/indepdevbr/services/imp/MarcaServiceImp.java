@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ import br.com.indepdevbr.services.repository.MarcaRepository;
 public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMarcaService {
 
 	@Override
+	@Cacheable("marcas")
 	public Marca buscarPorId(Long id) {
 		try {
 			return repository.findById(id)
@@ -35,6 +37,7 @@ public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMa
 	}
 
 	@Override
+	@Cacheable("marcas")
 	public Page<Marca> listarPaginado(Pageable pageable) {
 		try {
 			return repository.findAll(pageable)
@@ -47,6 +50,7 @@ public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMa
 	}
 	
 	@Override
+	@Cacheable("marcas")
 	public List<Marca> listarTodos() {
 		try {
 			return repository.findAll()
@@ -99,9 +103,10 @@ public class MarcaServiceImp extends SuperClasse<MarcaRepository> implements IMa
 	}
 
 	@Override
-	public List<Marca> buscarPorNomMarcaContem(String nomMarca) {
+	@Cacheable("marcas")
+	public List<Marca> buscarPorNomMarcaComecaCom(String nomMarca) {
 		try {
-			List<Marca> marcas = repository.findByNomMarcaContaining(nomMarca);
+			List<Marca> marcas = repository.findByNomMarcaStartsWith(nomMarca);
 			return marcas;
 		} catch (Exception e) {
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
