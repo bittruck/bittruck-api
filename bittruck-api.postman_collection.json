@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8f922670-3708-4cf7-9167-b0da6a5e8ceb",
+		"_postman_id": "2d551b91-7a3c-4fbe-a98e-ae134f1662fe",
 		"name": "bittruck-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1327,7 +1327,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\t\"codLogin\":\"admin1\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"raw": "{\n\t\t\"codLogin\":\"welton@bittruck.com.br\",\n\t\t\"desSenha\":\"123456\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1377,7 +1377,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\t\"codLogin\":\"admin2\",\n\t\t\"desSenha\":\"123456\"\n}",
+									"raw": "{\n\t\t\"codLogin\":\"paulo@bittruck.com.br\",\n\t\t\"desSenha\":\"123456\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1430,7 +1430,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer  {{jwtMotorista}}",
+								"value": "Bearer {{jwtMotorista}}",
 								"type": "text"
 							}
 						],
@@ -4364,6 +4364,51 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "buscarPorNomMarcaComeCom",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "64f33bc2-9dbe-4c89-88e9-a07b730a9940",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtOperador}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/marca/comeca_com?nomMarca=V",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"comeca_com"
+									],
+									"query": [
+										{
+											"key": "nomMarca",
+											"value": "V"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -6996,7 +7041,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"nomModelo\":\"LS 1632\"\n}",
+									"raw": "{\n\t\"nomModelo\":\"LS 1632A\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8069,7 +8114,55 @@
 				},
 				{
 					"name": "buscar",
-					"item": [],
+					"item": [
+						{
+							"name": "buscarPorIdMarcaENomModeloComecaCom",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e0ffe036-f194-45c5-a7b1-6024b5028f17",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtOperador}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/marca/1/modelo/comeca_com?nomModelo=FH",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"marca",
+										"1",
+										"modelo",
+										"comeca_com"
+									],
+									"query": [
+										{
+											"key": "nomModelo",
+											"value": "FH"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}

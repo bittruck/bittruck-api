@@ -10,10 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import br.com.indepdevbr.models.Administrador;
 import br.com.indepdevbr.models.Usuario;
 import br.com.indepdevbr.models.enums.ENivelPermissao;
 import br.com.indepdevbr.models.enums.ESimNao;
-import br.com.indepdevbr.services.imp.UsuarioServiceImp;
+import br.com.indepdevbr.services.imp.AdministradorServiceImp;
 
 @SpringBootApplication
 @EnableJpaAuditing
@@ -24,17 +25,19 @@ public class BittruckApiApplication implements CommandLineRunner {
 		SpringApplication.run(BittruckApiApplication.class, args);
 	}
 
-	@Autowired
-	private UsuarioServiceImp usuarioServiceImp;
-	
-	private List<Usuario> usuarios = Arrays.asList(
-			new Usuario("admin1", "123456", ESimNao.SIM, ENivelPermissao.ADMIN),
-			new Usuario("admin2", "123456", ESimNao.SIM, ENivelPermissao.ADMIN)
+	private List<Administrador> admins = Arrays.asList(
+				new Administrador("Welton Leão Machado", "welton@bittruck.com.br", "12345678978", 
+						new Usuario("welton@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN)),
+				new Administrador("Paulo Henrique", "paulo@bittruck.com.br", "12345678978", 
+						new Usuario("paulo@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN))
 			);
+	
+	@Autowired
+	private AdministradorServiceImp service;
 	
 	@Override
 	public void run(String... args) throws Exception {
-		usuarios.forEach(usuarioServiceImp::inserir);
-	}
+		admins.forEach(service::inserir);		
+	} 
 
 }
