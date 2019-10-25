@@ -14,20 +14,31 @@ import okhttp3.ResponseBody;
 
 public class ViaCepClient {
 	
-	public static void main(String[] args) throws IOException {
-		
-		OkHttpClient client = new OkHttpClient.Builder()
-									.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("vbr008002-029.bbmapfre.corp", 80)))
-									.build();
-		Request request = new Request.Builder()
-								.url("http://viacep.com.br/ws/01001000/json/")
-								.build();
-		ResponseBody response = client.newCall(request).execute().body();		
-		Gson gson = new Gson();
-		EnderecoViaCep endereco = gson.fromJson(new InputStreamReader(response.byteStream()), EnderecoViaCep.class);
-		System.out.println(endereco);
-	}
-	
+	private final String URL_VIA_CEP = "http://viacep.com.br/ws/";
+	private final String COMPLEMENTO_URL_VIA_CEP = "/json";	
 
+	public EnderecoViaCep buscarPorCep(String cep) throws IOException {
+		OkHttpClient client = new OkHttpClient.Builder()
+//									.proxy(
+//											new Proxy(Proxy.Type.HTTP, 
+//													new InetSocketAddress("", 80)))
+									.build();
+		String url = URL_VIA_CEP + cep + COMPLEMENTO_URL_VIA_CEP;
+		Request request = new Request.Builder()
+									.url(url)
+									.build();
+		ResponseBody responseBody;
+		try {
+			responseBody  = client
+					.newCall(request)
+					.execute()
+					.body();
+			Gson gson = new Gson();
+			EnderecoViaCep enderecoViaCep = gson.fromJson(new InputStreamReader(responseBody.byteStream()), EnderecoViaCep.class);
+			return enderecoViaCep;
+		} catch (IOException e) {
+			throw e;
+		}		
+	}
 	
 }
