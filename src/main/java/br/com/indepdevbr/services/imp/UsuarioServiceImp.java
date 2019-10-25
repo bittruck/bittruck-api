@@ -19,12 +19,15 @@ public class UsuarioServiceImp extends SuperClasse<UsuarioRepository> implements
 	private PasswordEncoder passwordEncoder;
 	
 	
+	
 	@Override
 	public Usuario inserir(Usuario usuario) {
 		try {
+			logger.info("metodo=inserir, " + usuario);
 			usuario.setDesSenha(passwordEncoder.encode(usuario.getDesSenha()));
 			return repository.save(usuario);
 		} catch (Exception e) {
+			logger.error("metodo=inserir, throw=" + e.getMessage(), e);
 			throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
 		}
 	}

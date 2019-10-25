@@ -14,12 +14,16 @@ import br.com.indepdevbr.models.exception.RecursoNaoEncontradoException;
 import br.com.indepdevbr.services.IOperadorService;
 import br.com.indepdevbr.services.abs.SuperClasse;
 import br.com.indepdevbr.services.repository.OperadorRepository;
+import br.com.indepdevbr.services.repository.TransportadoraRepository;
 
 @Service
 public class OperadorServiceImp extends SuperClasse<OperadorRepository> implements IOperadorService {
 
 	@Autowired
 	private UsuarioServiceImp usuarioServiceImp;
+	
+	@Autowired
+	private TransportadoraRepository transportadoraRepository;
 	
 	@Override
 	public Operador buscarPorCodLogin(String desEmail) {
@@ -39,7 +43,7 @@ public class OperadorServiceImp extends SuperClasse<OperadorRepository> implemen
 	}
 
 	@Override
-	public Operador cadastrar(Transportadora transportadora, Operador operador) {
+	public Operador cadastrarPrimeiroOperador(Transportadora transportadora, Operador operador) {
 		try {
 			Usuario usuario = usuarioServiceImp.inserir(operador.getUsuario());
 			operador.setUsuario(usuario);
@@ -52,8 +56,23 @@ public class OperadorServiceImp extends SuperClasse<OperadorRepository> implemen
 
 	@Override
 	public Operador inserir(Long idTransportadora, Operador operador) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			Usuario usuario = usuarioServiceImp.inserir(operador.getUsuario());
+			Operador operadorPersit = transportadoraRepository.findById(idTransportadora)
+											.map( transportadora -> {
+												operador.setTransportadora(transportadora);
+												operador.setUsuario(usuario);
+												return repository.save(operador);
+											})
+											.orElseThrow(() -> new RecursoNaoEncontradoException("Nenhuma transportadora encontrada pelo id: " + idTransportadora));
+			return operadorPersit;
+		} catch (Exception e) {
+			if(e instanceof RecursoNaoEncontradoException) {
+				throw e;
+			} else {
+				throw new ErroInternoException("Ocorreu um erro ao processara a requisição", e);
+			}
+		}
 	}
 	
 	@Override
@@ -80,6 +99,23 @@ public class OperadorServiceImp extends SuperClasse<OperadorRepository> implemen
 			return operadores;
 		} catch (Exception e) {
 			throw new ErroInternoException("Ocorreu um problema ao processar a requisição", e);
+		}
+	}
+	
+	@Override
+	public Operador atualizar(Long idTransportadora, Operador operador) {
+		try {
+			if(!repository.existsByIdAndTransportadoraId(operador.getId(), idTransportadora)) {
+				throw new RecursoNaoEncontradoException("Nenhuma operador encontrado pelo id: " + operador.getId() + " e transportadora_id: " + idTransportadora);
+			}
+			Operador operadorPersist = repository.save(operador);
+			return operadorPersist;
+		} catch (Exception e) {
+			if(e instanceof RecursoNaoEncontradoException) {
+				throw e;
+			} else {
+				throw new ErroInternoException("Ocorreu um erro ao processara a requisição", e);
+			}
 		}
 	}
 }

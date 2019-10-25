@@ -27,7 +27,7 @@ public class TransportadoraServiceImp extends SuperClasse<TransportadoraReposito
 															   transportadoraOperador.getCodCnpj(), 
 															   transportadoraOperador.getNumTelefone(), 
 															   transportadoraOperador.getEndereco()));
-			Operador operador = operadorServiceImp.cadastrar(transportadora, transportadoraOperador.getOperador());
+			Operador operador = operadorServiceImp.cadastrarPrimeiroOperador(transportadora, transportadoraOperador.getOperador());
 			TransportadoraOperador cadastroTransportadoraOperador = 
 					new TransportadoraOperador(transportadora.getId(), transportadora.getCriadoEm(), transportadora.getAtualizadoEm(),
 												transportadora.getCodCnpj(), transportadora.getDesEmailContato(),transportadora.getDesRazaoSocial(), 

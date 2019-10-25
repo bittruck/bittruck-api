@@ -53,7 +53,7 @@ public class AutenticacaoController {
 	@PostMapping(value = "login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public UsuarioAutenticado logar(@Valid @RequestBody Usuario usuario) {
 		Usuario usuarioService = usuarioServiceImp.validarUsuario(usuario);
-		String strTokenJWT = gerenciadorTokenJWT.gerarToken(usuarioService);
+		String strTokenJWT = gerenciadorTokenJWT.gerarTokenAutenticacao(usuarioService);
 		if(usuarioService.getTpoPermissao() == ENivelPermissao.OPERADOR 
 				|| usuarioService.getTpoPermissao() == ENivelPermissao.OPERADOR_ADMIN) {
 			Long idTransportadora = operadorServiceImp.buscarPorCodLogin(

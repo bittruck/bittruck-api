@@ -18,4 +18,6 @@ public interface OperadorRepository extends JpaRepository<Operador, Long> {
 	
 	public Page<Operador> findByTransportadoraId(Long trasportadoraId, Pageable pageable);
 	
+	public boolean existsByIdAndTransportadoraId(Long id, Long transportadoraId);
+	
 }

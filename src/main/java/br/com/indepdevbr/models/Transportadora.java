@@ -46,7 +46,7 @@ public class Transportadora extends AuditModel {
 	private String desRazaoSocial;
 	
 	@Enumerated(EnumType.STRING)
-	private ESimNao mcaAtivo = ESimNao.NAO;
+	private ESimNao mcaAtivo = ESimNao.SIM;
 	
 	@NotNull
 	private String numTelefone;
