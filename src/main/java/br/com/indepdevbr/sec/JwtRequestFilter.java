@@ -33,7 +33,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 		String tokenJWT = null;
 		if(requestHeader != null && requestHeader.startsWith("Bearer ")) {
 			tokenJWT = requestHeader.substring(7);
-			codLogin = gerenciadorTokenJWT.capturarCodLoginTokenJWT(tokenJWT);
+			codLogin = gerenciadorTokenJWT.capturarCodLoginTokenJWTAutenticacao(tokenJWT);
 		}
 		if(codLogin != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 			UserDetails userDetails = usuarioDetalhesServiceImp.loadUserByUsername(codLogin);

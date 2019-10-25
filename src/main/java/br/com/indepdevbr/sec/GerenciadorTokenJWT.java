@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import br.com.indepdevbr.models.Transportadora;
 import br.com.indepdevbr.models.Usuario;
 import br.com.indepdevbr.models.exception.BittruckException;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -19,14 +20,17 @@ public class GerenciadorTokenJWT {
 	@Value("${br.com.indepdevbr.bittruck.app.jwtSecret}")
 	private String chaveSecretaJWT;
 	
-	@Value("${br.com.indepdevbr.bittruck.app.jwtExpirationInMs}")
-	private long tempoDuracaoToken;
+	@Value("${br.com.indepdevbr.bittruck.app.duracaoTokenAutenticacao}")
+	private long duracaoTokenAutenticacao;
+	
+	@Value("${br.com.indepdevbr.bittruck.app.duracaoTokenAtivacaoTransportadora}")
+	private long duracaoTokenAtivacaoTransportadora;
 	
 	private static final String ROLE = "role";
 	
-	public String gerarToken(Usuario usuario) {
+	public String gerarTokenAutenticacao(Usuario usuario) {
 		Date datAtual = new Date();
-		Date datExpiracaoToken = new Date(datAtual.getTime() + tempoDuracaoToken);
+		Date datExpiracaoToken = new Date(datAtual.getTime() + duracaoTokenAutenticacao);
 		return Jwts.builder()
 				.setSubject(usuario.getCodLogin())
 				.setIssuedAt(datAtual)
@@ -36,7 +40,20 @@ public class GerenciadorTokenJWT {
 				.compact();
 	}
 	
-	public String capturarCodLoginTokenJWT(String tokenJWT) {
+	public String gerarTokenAtivacaoTransportadora(Transportadora transportadora) {
+		Date datAtual = new Date();
+		Date datExpiracaoToken = new Date(datAtual.getTime() + duracaoTokenAtivacaoTransportadora);
+		final String TRANSPORTADORA_ID = "transportadora_id";
+		return Jwts.builder()
+				.setSubject(transportadora.getCodCnpj())
+				.setIssuedAt(datAtual)
+				.setExpiration(datExpiracaoToken)
+				.claim(TRANSPORTADORA_ID, transportadora.getId())
+				.signWith(SignatureAlgorithm.HS256, chaveSecretaJWT)
+				.compact();
+	}
+	
+	public String capturarCodLoginTokenJWTAutenticacao(String tokenJWT) {
 		return Jwts.parser()
 				.setSigningKey(chaveSecretaJWT)
 				.parseClaimsJws(tokenJWT)

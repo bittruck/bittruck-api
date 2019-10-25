@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/autenticacao/login",
 						"/cadastro/transportadora_operador",
 						"/cadastro/motorista",
+						"/transportadora/ativar",
 						"/swagger-resources/configuration/ui",
 						"/swagger-resources/configuration/security",
 						"/csrf",
