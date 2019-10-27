@@ -27,6 +27,21 @@ public class EnderecoViaCep implements Serializable {
 	public EnderecoViaCep() {
 		
 	}
+	
+	public EnderecoViaCep(String uf, String localidade, String logradouro) {
+		this.uf = uf;
+		this.localidade = localidade;
+		this.logradouro = logradouro;
+	}
+	
+	public EnderecoViaCep(String cep, String logradouro, String complemento, String bairro, String localidade, String uf) {
+		this.cep = cep;
+		this.logradouro = logradouro;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.localidade = localidade;
+		this.uf = uf;
+	}
 
 	public String getCep() {
 		return cep;

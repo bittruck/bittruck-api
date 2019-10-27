@@ -47,6 +47,20 @@ public class Endereco extends AuditModel {
 	private String nomEstado;
 	
 	public Endereco() {}
+	
+	public Endereco(String codCep, String desLogradouro, String nomBairro, String nomCidade, String nomEstado) {
+		this.codCep = codCep;
+		this.desLogradouro = desLogradouro;
+		this.nomBairro = nomBairro;
+		this.nomCidade = nomCidade;
+		this.nomEstado = nomEstado;
+	}
+	
+	public Endereco(String nomEstado, String nomCidade, String desLogradouro) {
+		this.nomEstado = nomEstado;
+		this.nomCidade = nomCidade;
+		this.desLogradouro = desLogradouro;
+	}
 
 	public Long getId() {
 		return id;
