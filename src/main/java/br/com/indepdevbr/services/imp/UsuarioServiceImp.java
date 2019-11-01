@@ -69,6 +69,20 @@ public class UsuarioServiceImp extends SuperClasse<UsuarioRepository> implements
 		}
 	}
 
-	
+	@Override
+	public void atualizar(Usuario usuario) {
+		try {
+			if(!repository.existsByCodLogin(usuario.getCodLogin())) {
+				throw new RecursoNaoEncontradoException("Nenhum usuário encontradpo pelo codLogin: ");
+			}
+			repository.save(usuario);
+		} catch (Exception e) {
+			if(e instanceof RecursoNaoEncontradoException) {
+				throw e;
+			} else {
+				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
+			}
+		}
+	}
 
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.indepdevbr.models.Operador;
 import br.com.indepdevbr.models.Transportadora;
-import br.com.indepdevbr.models.dto.TransportadoraOperador;
+import br.com.indepdevbr.models.dto.cadastro_transportadora.TransportadoraOperador;
 import br.com.indepdevbr.models.exception.BittruckException;
 import br.com.indepdevbr.models.exception.ErroInternoException;
 import br.com.indepdevbr.models.exception.RecursoNaoEncontradoException;

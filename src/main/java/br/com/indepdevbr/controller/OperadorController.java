@@ -104,7 +104,7 @@ public class OperadorController {
 			@PathVariable("idTransportadora") Long idTransportadora,
 			@Valid @RequestBody Operador operador
 			) {
-		return null;
+		return operadorServiceImp.atualizar(idTransportadora, operador);
 	}
 	
 }

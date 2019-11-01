@@ -11,6 +11,8 @@ import br.com.indepdevbr.models.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	public Optional<Usuario> findByCodLogin(String codLogin);
+	
+	public boolean existsByCodLogin(String codLogin);
 
 
 }

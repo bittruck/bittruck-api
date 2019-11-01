@@ -1,4 +1,4 @@
-package br.com.indepdevbr.models.dto;
+package br.com.indepdevbr.models.dto.cadastro_transportadora;
 
 import java.util.Date;
 
@@ -31,6 +31,7 @@ public class TransportadoraOperador extends Transportadora {
 		this.setNumTelefone(numTelefone);
 		this.setMcaAtivo(mcaAtivo);
 		this.operador = operador;
+		this.setEndereco(endereco);
 	}
 
 	public Operador getOperador() {

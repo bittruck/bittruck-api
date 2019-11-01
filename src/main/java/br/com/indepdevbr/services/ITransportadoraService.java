@@ -1,7 +1,7 @@
 package br.com.indepdevbr.services;
 
 import br.com.indepdevbr.models.Transportadora;
-import br.com.indepdevbr.models.dto.TransportadoraOperador;
+import br.com.indepdevbr.models.dto.cadastro_transportadora.TransportadoraOperador;
 
 public interface ITransportadoraService {
 	

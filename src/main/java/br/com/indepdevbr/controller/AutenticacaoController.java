@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.indepdevbr.models.Usuario;
-import br.com.indepdevbr.models.dto.UsuarioAutenticado;
-import br.com.indepdevbr.models.dto.UsuarioAutenticadoOperador;
+import br.com.indepdevbr.models.dto.autenticacao.UsuarioAutenticado;
+import br.com.indepdevbr.models.dto.autenticacao.UsuarioAutenticadoOperador;
 import br.com.indepdevbr.models.enums.ENivelPermissao;
 import br.com.indepdevbr.sec.GerenciadorTokenJWT;
 import br.com.indepdevbr.services.imp.OperadorServiceImp;

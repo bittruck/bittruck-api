@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.indepdevbr.models.Motorista;
-import br.com.indepdevbr.models.dto.TransportadoraOperador;
+import br.com.indepdevbr.models.dto.cadastro_transportadora.TransportadoraOperador;
 import br.com.indepdevbr.services.imp.MotoristaServiceImp;
 import br.com.indepdevbr.services.imp.TransportadoraServiceImp;
 import io.swagger.annotations.Api;

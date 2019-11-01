@@ -32,7 +32,7 @@ public class EnderecoController {
 	@ApiResponses({
 		@ApiResponse(
 				code = 200, 
-				message = "Retorna um endereço com base no CEP"),
+				message = "Retorna uma lista endereço com base no CEP"),
 		@ApiResponse(
 				code = 404, 
 				message = "Nenhum endereço encontrado pelo cep informado"),
@@ -44,10 +44,22 @@ public class EnderecoController {
 	@Secured({"OPERADOR_ADMIN, OPERADOR"})
 	public List<Endereco> buscarPorCep(
 			 @RequestParam("codCep") String codCep
-			) {
+			) {		
 		return enderecoServiceImp.buscarPorCep(codCep);
 	}
 	
+	@ApiOperation(value = "Metodo de busca de endereço nomEstado, nomCidade e desLogradouro")
+	@ApiResponses({
+		@ApiResponse(
+				code = 200, 
+				message = "Retorna uma lista de endereço com base nos dados nomEstado, nomCidade e desLogradouro"),
+		@ApiResponse(
+				code = 404, 
+				message = "Nenhum endereço encontrado pelos dados informados"),
+		@ApiResponse(
+				code = 500, 
+				message = "Ocorreu um erro ao processar a requisição"), }
+	)
 	@GetMapping(value = "/buscarCepPorEndereco")
 	@Secured({"OPERADOR_ADMIN", "OPERADOR"})
 	public List<Endereco> buscarCepPorEndereco(
@@ -57,5 +69,4 @@ public class EnderecoController {
 			) {
 		return enderecoServiceImp.buscarPorNomEstadoNomCidadeDesLogradouro(nomEstado, nomCidade, desLogradouro);
 	}
-
 }

@@ -9,5 +9,7 @@ public interface IUsuarioService {
 	public Usuario buscarPorCodLogin(String codLogin);
 	
 	public Usuario validarUsuario(Usuario usuario);
+
+	public void atualizar(Usuario usuario);
 	
 }

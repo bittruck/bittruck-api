@@ -1,6 +1,8 @@
 package br.com.indepdevbr.tools.clients.viacep;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,9 +24,9 @@ public class ViaCepClient {
 
 	public List<EnderecoViaCep> buscarPorCep(String cep) throws IOException {
 		OkHttpClient client = new OkHttpClient.Builder()
-//									.proxy(
-//											new Proxy(Proxy.Type.HTTP, 
-//													new InetSocketAddress("", 80)))
+									.proxy(
+											new Proxy(Proxy.Type.HTTP, 
+													new InetSocketAddress("vbr008002-029.bbmapfre.corp", 80)))
 									.build();
 		String url = String.format("%s%s%s",URL_VIA_CEP,cep,COMPLEMENTO_URL_VIA_CEP);
 		Request request = new Request.Builder()

@@ -22,7 +22,6 @@ public class EnderecoServiceImp extends SuperClasse<EnderecoRepository> implemen
 	@Autowired
 	private ViaCepClient viaCepClient;
 	
-	
 	@Override
 	public Endereco inserir(Endereco endereco) {
 		try {

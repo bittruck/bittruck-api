@@ -1,4 +1,4 @@
-package br.com.indepdevbr.models.dto;
+package br.com.indepdevbr.models.dto.autenticacao;
 
 import br.com.indepdevbr.models.enums.ENivelPermissao;
 
