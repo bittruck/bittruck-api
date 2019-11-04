@@ -7,6 +7,6 @@ import br.com.indepdevbr.services.abs.SuperClasse;
 import br.com.indepdevbr.services.repository.VeiculoRepository;
 
 @Service
-public class VeiuloServiceImp extends SuperClasse<VeiculoRepository> implements IVeiculoService {
+public class VeiculoServiceImp extends SuperClasse<VeiculoRepository> implements IVeiculoService {
 
 }
