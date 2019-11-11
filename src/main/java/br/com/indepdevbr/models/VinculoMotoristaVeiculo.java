@@ -72,6 +72,15 @@ public class VinculoMotoristaVeiculo extends AuditModel {
             mappedBy = "vinculoMotoristaVeiculos")
 	private Set<SolicitacaoVinculoMotoristaVeiculo> solicitacaoVinculoMotoristaVeiculos = new HashSet<>();
 
+	
+	public VinculoMotoristaVeiculo() {}
+	
+	public VinculoMotoristaVeiculo(Motorista motoristaProprietario, Motorista motoristaUsuario, Veiculo veiculo) {
+		this.motoristaPropietario = motoristaProprietario;
+		this.motoristaUsuario = motoristaUsuario;
+		this.veiculo = veiculo;
+	}
+	
 	public Long getId() {
 		return id;
 	}

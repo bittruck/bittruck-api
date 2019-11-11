@@ -3,10 +3,13 @@ package br.com.indepdevbr.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.indepdevbr.models.SolicitacaoVinculoTransportadoraMotorista;
 import br.com.indepdevbr.models.Transportadora;
 import br.com.indepdevbr.services.imp.TransportadoraServiceImp;
 import io.swagger.annotations.Api;
@@ -42,6 +45,16 @@ public class TransportadoraController {
 	@Secured({"OPERADOR_ADMIN, ADMIN"})
 	public Transportadora alterar(Transportadora transportadora) {
 		return transportadoraServiceImp.alterar(transportadora);
+	}
+	
+	@PutMapping("/{idTransportadora}/motorista/{idMotorista}")
+	@Secured({"OPERADOR_ADMIN"})
+	public SolicitacaoVinculoTransportadoraMotorista SolicitarInclusaoMotorista(
+			@PathVariable("idTransportadora") Long idTransportadora,
+			@PathVariable("idMotorista") Long idMotorista,
+			@RequestParam("id_operador") Long idOperador
+			) {
+		return transportadoraServiceImp.solicitarInclusaoMotorista(idTransportadora, idMotorista, idOperador);
 	}
 	
 }

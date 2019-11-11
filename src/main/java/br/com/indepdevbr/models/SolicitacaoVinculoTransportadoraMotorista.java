@@ -77,6 +77,16 @@ public class SolicitacaoVinculoTransportadoraMotorista extends AuditModel {
 	
 	@Enumerated(EnumType.STRING)
 	private EStatusSolicitacao desStatus;
+	
+	public SolicitacaoVinculoTransportadoraMotorista() {}
+	
+	public SolicitacaoVinculoTransportadoraMotorista(Transportadora transportadora, Motorista motorista, Operador operador, Date datSolicitacao, EStatusSolicitacao desStatus) {
+		this.transportadora = transportadora;
+		this.operador = operador;
+		this.motorista = motorista;
+		this.datSolicitacao = datSolicitacao;
+		this.desStatus = desStatus;
+	}
 
 	public Long getId() {
 		return id;

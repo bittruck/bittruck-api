@@ -58,17 +58,17 @@ public class Veiculo extends AuditModel {
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "marca_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("marca_id")
+//    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//    @JsonIdentityReference(alwaysAsId=true)
+//    @JsonProperty("marca_id")
 	private Marca marca;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "modelo_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("modelo_id")
+//    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//    @JsonIdentityReference(alwaysAsId=true)
+//    @JsonProperty("modelo_id")
 	private Modelo modelo;
 
 	public Long getId() {

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.indepdevbr.models.Administrador;
 import br.com.indepdevbr.models.Motorista;
 import br.com.indepdevbr.models.dto.cadastro_transportadora.TransportadoraOperador;
+import br.com.indepdevbr.services.imp.AdministradorServiceImp;
 import br.com.indepdevbr.services.imp.MotoristaServiceImp;
 import br.com.indepdevbr.services.imp.TransportadoraServiceImp;
 import io.swagger.annotations.Api;
@@ -31,6 +33,9 @@ public class CadastroController {
 	
 	@Autowired
 	private TransportadoraServiceImp transportadoraServiceImp;
+	
+	@Autowired
+	private AdministradorServiceImp administradorServiceImp;
 	
 	@ApiOperation(value = "Endpoint de cadastro de motorista")
 	@ApiResponses({
@@ -60,5 +65,10 @@ public class CadastroController {
 	public TransportadoraOperador cadastrarTransportadoraOperador(
 			@Valid @RequestBody TransportadoraOperador transportadoraOperador) {		
 		return transportadoraServiceImp.cadastrarTransportadoraOperador(transportadoraOperador);
+	}
+	
+	@PostMapping(value = "/admin")
+	public Administrador cadastrarAdministrador(@Valid @RequestBody Administrador administrador) {
+		return administradorServiceImp.inserir(administrador);
 	}
 }

@@ -1,7 +1,6 @@
 package br.com.indepdevbr;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,19 +24,19 @@ public class BittruckApiApplication implements CommandLineRunner {
 		SpringApplication.run(BittruckApiApplication.class, args);
 	}
 
-	private List<Administrador> admins = Arrays.asList(
-				new Administrador("Welton Leão Machado", "welton@bittruck.com.br", "12345678978", 
-						new Usuario("welton@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN)),
-				new Administrador("Paulo Henrique", "paulo@bittruck.com.br", "12345678978", 
-						new Usuario("paulo@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN))
-			);
+
 	
 	@Autowired
 	private AdministradorServiceImp service;
 	
 	@Override
 	public void run(String... args) throws Exception {
-		admins.forEach(service::inserir);		
+//		Arrays.asList(
+//				new Administrador("Welton Leão Machado", "welton@bittruck.com.br", "12345678978", 
+//						new Usuario("welton@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN)),
+//				new Administrador("Paulo Henrique", "paulo@bittruck.com.br", "12345678978", 
+//						new Usuario("paulo@bittruck.com.br", "123456", ESimNao.SIM, ENivelPermissao.ADMIN))
+//			).forEach(service::inserir);		
 	} 
 
 }
