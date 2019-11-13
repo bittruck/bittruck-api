@@ -1,21 +1,15 @@
 package br.com.indepdevbr.services.imp;
 
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.indepdevbr.models.Motorista;
-import br.com.indepdevbr.models.SolicitacaoVinculoTransportadoraMotorista;
 import br.com.indepdevbr.models.Usuario;
-import br.com.indepdevbr.models.enums.EStatusSolicitacao;
 import br.com.indepdevbr.models.exception.ErroInternoException;
 import br.com.indepdevbr.models.exception.RecursoNaoEncontradoException;
 import br.com.indepdevbr.services.IMotoristaService;
 import br.com.indepdevbr.services.abs.SuperClasse;
 import br.com.indepdevbr.services.repository.MotoristaRepository;
-import br.com.indepdevbr.services.repository.SolicitacaoVinculoTransportadoraMotoristaRepository;
 
 @Service
 public class MotoristaServiceImp extends SuperClasse<MotoristaRepository> implements IMotoristaService {
@@ -23,9 +17,7 @@ public class MotoristaServiceImp extends SuperClasse<MotoristaRepository> implem
 	
 	@Autowired
 	private UsuarioServiceImp usuarioServiceImp;
-	
-	@Autowired
-	private SolicitacaoVinculoTransportadoraMotoristaRepository solicitacaoVinculoTransportadoraMotoristaRepository;
+			
 	
 	@Override
 	public Motorista inserir(Motorista motorista) {
@@ -57,40 +49,7 @@ public class MotoristaServiceImp extends SuperClasse<MotoristaRepository> implem
 	}
 	
 	
-	public List<SolicitacaoVinculoTransportadoraMotorista> listarSolicitacoesVinculoTransportadoraMotoristaPorIdMotorista(Long idMotorista) {
-		try {
-			List<SolicitacaoVinculoTransportadoraMotorista> solicitacoes = solicitacaoVinculoTransportadoraMotoristaRepository.findByMotoristaId(idMotorista);
-			if(solicitacoes.size() > 0)
-				return solicitacoes;
-			else 
-				throw new RecursoNaoEncontradoException("Nenhuma solicitação encontrada");
-		} catch (Exception e) {
-			if(e instanceof RecursoNaoEncontradoException) {
-				throw e;
-			} else {
-				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
-			}
-		}
-	}
 	
-	public SolicitacaoVinculoTransportadoraMotorista responderSolicitacaoVinculoTransportadoraMotorista(Long idSolicitacao, Long idMotorista, EStatusSolicitacao desResposta) {
-		try {
-			return solicitacaoVinculoTransportadoraMotoristaRepository
-					.findByIdAndMotoristaId(idSolicitacao, idMotorista)
-					.map( solicitacao -> {
-						solicitacao.setDatResposta(new Date());
-						solicitacao.setDesStatus(desResposta);
-						return solicitacaoVinculoTransportadoraMotoristaRepository.save(solicitacao);
-					})
-					.orElseThrow(() -> new RecursoNaoEncontradoException("Nenhuma solicitação encontrada pelo id: " + idSolicitacao));
-		} catch (Exception e) {
-			if(e instanceof RecursoNaoEncontradoException) {
-				throw e;
-			} else {
-				throw new ErroInternoException("Ocorreu um erro ao processar a requisição", e);
-			}
-		}
-	}
 	
 
 }

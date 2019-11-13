@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.indepdevbr.models.Motorista;
 import br.com.indepdevbr.models.SolicitacaoVinculoTransportadoraMotorista;
+import br.com.indepdevbr.models.VinculoTransportadoraMotorista;
 import br.com.indepdevbr.models.enums.EStatusSolicitacao;
 import br.com.indepdevbr.services.imp.MotoristaServiceImp;
+import br.com.indepdevbr.services.imp.SolicitacaoVinculoTransportadoraMotoristaServiceImp;
+import br.com.indepdevbr.services.imp.VinculoTransportadoraMotoristaServiceImp;
 
 @RestController
 @RequestMapping("/motorista")
@@ -22,6 +25,12 @@ public class MotoristaController {
 	
 	@Autowired
 	private MotoristaServiceImp motoristaServiceImp;
+	
+	@Autowired
+	private SolicitacaoVinculoTransportadoraMotoristaServiceImp solicitacaoVinculoTransportadoraMotoristaServiceImp;
+	
+	@Autowired
+	private VinculoTransportadoraMotoristaServiceImp vinculoTransportadoraMotoristaServiceImp; 
 	
 	@GetMapping("/{idMotorista}")
 	@Secured({"MOTORISTA, OPERADOR, OPERADOR_ADMIN"})
@@ -34,7 +43,7 @@ public class MotoristaController {
 	public List<SolicitacaoVinculoTransportadoraMotorista> listarSolicitacoesPorIdMotorista(
 			@PathVariable("idMotorista") Long idMotorista
 			) {
-		return motoristaServiceImp.listarSolicitacoesVinculoTransportadoraMotoristaPorIdMotorista(idMotorista);
+		return solicitacaoVinculoTransportadoraMotoristaServiceImp.listarSolicitacoesVinculoTransportadoraMotoristaPorIdMotorista(idMotorista);
 	}
 	
 	@PutMapping("/{idMotorista}/solicitacao/transportadora/{idSolicitacao}")
@@ -44,6 +53,14 @@ public class MotoristaController {
 			@PathVariable("idSolicitacao") Long idSolicitacao,
 			@RequestParam("des_resposta") EStatusSolicitacao desResposta
 			) {
-		return motoristaServiceImp.responderSolicitacaoVinculoTransportadoraMotorista(idSolicitacao, idMotorista ,desResposta);
+		return solicitacaoVinculoTransportadoraMotoristaServiceImp.responderSolicitacaoVinculoTransportadoraMotorista(idSolicitacao, idMotorista ,desResposta);
+	}
+	
+	@GetMapping("/{idMotorista}/vinculo/transportadora")
+	@Secured({"MOTORISTA"})
+	public List<VinculoTransportadoraMotorista> listarVinculosComTransportadoraPorIdMotorista(
+			@PathVariable("idMotorista") Long idMotorista
+			) {
+		return vinculoTransportadoraMotoristaServiceImp.listarVinculosPorIdMotorista(idMotorista);
 	}
 }

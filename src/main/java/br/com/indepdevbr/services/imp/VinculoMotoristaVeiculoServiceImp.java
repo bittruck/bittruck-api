@@ -8,5 +8,6 @@ import br.com.indepdevbr.services.repository.VinculoMotoristaVeiculoRepository;
 
 @Service
 public class VinculoMotoristaVeiculoServiceImp extends SuperClasse<VinculoMotoristaVeiculoRepository> implements IVinculoMotoristaVeiculoService {
-
+	
+	
 }

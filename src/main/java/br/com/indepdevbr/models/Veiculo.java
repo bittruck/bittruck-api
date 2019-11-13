@@ -9,16 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.com.indepdevbr.models.audit.AuditModel;
 import br.com.indepdevbr.models.enums.ESimNao;
@@ -39,12 +35,15 @@ public class Veiculo extends AuditModel {
 	)
 	private Long id;
 	
+	@NotBlank
 	@NotNull
 	private String codPlaca;
 	
+	@NotBlank
 	@NotNull
 	private String codAntt;
 	
+	@NotBlank
 	@NotNull
 	private String tpoAntt;
 	

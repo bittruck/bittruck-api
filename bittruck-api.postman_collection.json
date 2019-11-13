@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2d551b91-7a3c-4fbe-a98e-ae134f1662fe",
+		"_postman_id": "5d3f6742-c127-40d5-a799-a52447d8dfec",
 		"name": "bittruck-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1121,6 +1121,113 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "inserir - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bb1acf57-b146-4ae6-9159-b2ccd475a4a4",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomAdministrador\": \"Welton Machado\",\n\t\"desEmail\":\"welton@bittruck.com.br\",\n\t\"codCpf\":\"12345678912\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"welton@bittruck.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"ADMIN\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7413fb09-814c-4906-95ae-80f5c3e6cc42",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomAdministrador\": \"Paulo Henrique\",\n\t\"desEmail\":\"paulo@bittruck.com.br\",\n\t\"codCpf\":\"12345678912\",\n\t\"usuario\": {\n\t\t\"codLogin\":\"paulo@bittruck.com.br\",\n\t\t\"desSenha\":\"123456\",\n\t\t\"tpoPermissao\":\"ADMIN\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/cadastro/admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"cadastro",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1401,6 +1508,52 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "transportadora",
+			"item": [
+				{
+					"name": "buscarPorId - 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "efd7a3d9-128e-401e-9a03-303041e17601",
+								"exec": [
+									"pm.test(\"Status 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtOperador}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/transportadora/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"transportadora",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -8157,6 +8310,131 @@
 											"key": "nomModelo",
 											"value": "FH"
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "veiculo",
+			"item": [
+				{
+					"name": "inserir",
+					"item": [
+						{
+							"name": "inserir - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "be3c5a4b-f5bf-4943-9d16-257e505917b6",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtMotorista}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"codPlaca\":\"AAA-1234\",\n\t\"codAntt\":\"\",\n\t\"tpoAntt\":\"\",\n\t\"numAnoFabricacao\": 0,\n\t\"mcaCompartilhavel\": \"NAO\",\n\t\"marca\": {\n\t\t\"id\": 1,\n\t\t\"nomMarca\": \"VOLVO\"\n\t},\n\t\"modelo\": {\n\t\t\"id\": 1,\n\t\t\"nomModelo\": \"FH 400\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/motorista/1/veiculo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"motorista",
+										"1",
+										"veiculo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inserir - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "01e2cbff-0ad5-4134-a456-a174d09dc892",
+										"exec": [
+											"pm.test(\"Status 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwtMotorista}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"codPlaca\":\"BBB-4321\",\n\t\"codAntt\":\"\",\n\t\"tpoAntt\":\"\",\n\t\"numAnoFabricacao\": 0,\n\t\"mcaCompartilhavel\": \"SIM\",\n\t\"marca\": {\n\t\t\"id\": 1,\n\t\t\"nomMarca\": \"VOLVO\"\n\t},\n\t\"modelo\": {\n\t\t\"id\": 1,\n\t\t\"nomModelo\": \"FH 400\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/motorista/1/veiculo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"motorista",
+										"1",
+										"veiculo"
 									]
 								}
 							},
